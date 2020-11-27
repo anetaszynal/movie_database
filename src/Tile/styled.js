@@ -1,25 +1,32 @@
 import styled from "styled-components"
 import {ReactComponent as StarIcon} from "./star.svg"
+import image from "./poster.png"
 
 export const TileWrapper = styled.article`
   padding: 16px;
-  width: 324px;
   border-radius: 5px;
   background-color: ${({theme}) => theme.colors.white};
-  box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.5);
+  box-shadow: 0 4px 12px 0 rgba(186, 199, 213, 0.5);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
   border-radius: 5px;
-  max-width: 292px;
+  background-image: url(${image});
+  background-size: cover;
+  background-position: top;
+  min-height: 434px;
 `;
 
 export const Title = styled.h2`
-  margin: 16px 0 0;
+  margin: 0;
   font-weight: 500;
   font-size: ${({theme}) => theme.fontSize.secondTitle};
   line-height: ${({theme}) => theme.lineHeight.titleLine};
   color: ${({theme}) => theme.colors.black};
+  overflow-wrap: anywhere;
 `;
 
 export const Caption = styled.h3`
