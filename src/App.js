@@ -1,9 +1,9 @@
 import React from 'react';
+import { Tile } from "./Tile";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+      <Tile/>
   );
 }
 
