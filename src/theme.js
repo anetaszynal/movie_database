@@ -14,7 +14,9 @@ export const theme = {
     title: "36px",
     secondTitle: "22px",
     standard: "16px",
-    small: "14px"
+    small: "14px",
+    mobileStandard: "13px",
+    mobileSmall: "10px"
   },
 
   lineHeight: {
@@ -22,5 +24,10 @@ export const theme = {
     listLine: "1.4",
     titleLine: "1.3",
     small: "1.2",
+    mobile: "1.1"
+  },
+
+  breakpoint: {
+    mobile: "787px"
   }
 };
