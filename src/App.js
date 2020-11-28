@@ -1,9 +1,12 @@
 import React from 'react';
+import { Tile } from "./Tile";
+import { TileList } from "./TileList";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+      <TileList>
+      <Tile/>
+      </TileList>
   );
 }
 
