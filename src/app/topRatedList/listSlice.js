@@ -21,7 +21,7 @@ export const createListSlice = ({ name }) => {
       fetchError: () => ({
         status: "error"
       }),
-      clearAction: () => initialState,
+     // clearAction: () => initialState,
     },
   })
   const selectResults = state => state[name].results;

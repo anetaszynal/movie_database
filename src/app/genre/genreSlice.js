@@ -22,6 +22,6 @@ export const genresSlice = createSlice({
 
 export const { fetchGenres, fetchGenresSuccess, fetchGenresError } = genresSlice.actions
 
-export const selectGenres = state => state.genres
+export const selectGenres = state => state.genres.genres
 
 export default genresSlice.reducer
