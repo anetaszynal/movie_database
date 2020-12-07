@@ -3,6 +3,7 @@ import { Tile } from "./Tile";
 import { TileList } from "./TileList";
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchGenres, selectGenres } from './app/genre/genreSlice'
+import {actions} from './app/Movies/topRatedMoviesSlice'
 
 function App() {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchGenres());
+    dispatch(actions.fetch({page:1}))
   }, [dispatch])
 
   return (
