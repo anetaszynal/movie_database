@@ -22,8 +22,8 @@ export const Tile = ({ url, title, genres, caption, averageVotes, votes }) => {
           <Title>{title}</Title>
           <Caption>{caption}</Caption>
           <List>
-            {genres.map(genre => (
-              <ListItem key = {genre}>{genre}</ListItem>
+            {genres?.map((genre, index) => (
+              <ListItem key = {index}>{genre}</ListItem>
             ))}
           </List>
         </div>
