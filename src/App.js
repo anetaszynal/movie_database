@@ -1,25 +1,18 @@
 import React, { useEffect } from 'react'
-import { Tile } from "./Tile";
-import { TileList } from "./TileList";
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchGenres, selectGenres } from './app/genre/genreSlice'
-import {actions} from './app/Movies/topRatedMoviesSlice'
+import { useDispatch } from 'react-redux'
+import { fetchGenres } from './app/genre/genreSlice'
+import { MoviesPage } from './app/Movies/MoviesPage'
 
-function App() {
-  const dispatch = useDispatch();
-  const genres = useSelector(selectGenres);
+function App () {
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchGenres());
-    dispatch(actions.fetch({page:1}))
+    dispatch(fetchGenres())
   }, [dispatch])
 
   return (
-      <TileList>
-      <Tile/>
-
-      </TileList>
-  );
+    <MoviesPage/>
+  )
 }
 
-export default App;
+export default App

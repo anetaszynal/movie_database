@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { ReactComponent as StarIcon } from "./star.svg"
-import image from "./poster.png"
+
+const API_IMMAGE_PATH = "https://image.tmdb.org/t/p/w500"
 
 export const TileWrapper = styled.article`
   padding: 16px;
@@ -23,7 +24,7 @@ export const TileWrapper = styled.article`
 export const Image = styled.div`
   padding-top: calc(100%*632/421);
   border-radius: 5px;
-  background-image: url("${image}");
+  background-image: url("${API_IMMAGE_PATH}${({url}) => url}");
   background-size: cover;
   background-position: top;
   grid-area: picture;
