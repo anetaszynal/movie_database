@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { actions, selectors } from './topRatedMoviesSlice'
 import { selectGenres } from '../genre/genreSlice'
-import { Tile } from '../../Tile'
-import { TileList, Title, Container } from '../../TileList'
+import { Tile } from '../Tile'
+import { TileList, Title, Container } from '../TileList'
 import { getYear } from '../../lib/utils'
 
 export const MoviesPage = () => {
