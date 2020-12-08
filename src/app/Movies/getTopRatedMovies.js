@@ -1,5 +1,8 @@
 import { fetchApi } from '../fetchApi'
 
-export const getTopRatedMovies = ({path}) => fetchApi({
-  path: "/movie/top_rated"
+export const getTopRatedMovies = ({ page }) => fetchApi({
+  path: '/movie/top_rated',
+  parameters: {
+    page,
+  }
 })

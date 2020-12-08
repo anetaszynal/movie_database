@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import {useFetchDataOnLocationSearchChange} from '../useFetchDataOnChange'
 import { actions, selectors } from './topRatedMoviesSlice'
 import { selectGenres } from '../genre/genreSlice'
 import { Tile } from '../Tile'
@@ -7,16 +8,12 @@ import { getYear } from '../../lib/utils'
 import { ListPage } from '../topRatedList/ListPage'
 
 export const MoviesPage = () => {
-  const dispatch = useDispatch()
   const movies = useSelector(selectors.selectResults)
   const status = useSelector(selectors.selectStatus)
   const pagination = useSelector(selectors.selectPagination)
   const genres = useSelector(selectGenres)
 
-  useEffect(() => {
-    dispatch(actions.fetch({ page: 1 }))
-
-  }, [dispatch])
+ useFetchDataOnLocationSearchChange({fetchAction : actions.fetch})
 
   return (
     <ListPage
