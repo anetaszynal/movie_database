@@ -28,6 +28,7 @@ export const theme = {
   },
 
   breakpoint: {
+    headerBreak: "1050px",
     mobile: "787px"
   }
 };
