@@ -27,8 +27,8 @@ export const ChangePageButton = styled.button`
     transition: all 1s ease;
     
     &:hover{
-     filter: brightness(105%);
-     cursor: pointer;
+        filter: brightness(105%);
+        cursor: pointer;
     }
 
     &:disabled{
@@ -40,8 +40,8 @@ export const ChangePageButton = styled.button`
          }
     }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-      margin-right: 8px;
-      padding: 8px 12px;
+        margin-right: 8px;
+        padding: 8px 12px;
     }
 `
 
@@ -52,7 +52,7 @@ export const Arrow = styled(ArrowIcon)`
     fill: ${({ theme }) => theme.colors.blue};
     
     *:disabled & {
-      fill: ${({ theme }) => theme.colors.darkerGrey};
+        fill: ${({ theme }) => theme.colors.darkerGrey};
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
@@ -96,9 +96,9 @@ export const Text = styled.span`
     align-self: center;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-    margin: 0 8px;
-    font-size: 10px;
-    line-height: 2.4;
+        margin: 0 8px;
+        font-size: 10px;
+        line-height: 2.4;
     }
 `
 
@@ -108,8 +108,8 @@ export const Number = styled.span`
     color: ${({ theme }) => theme.colors.black};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-    margin: 0 2px;
-    font-size: 10px;
-    line-height: 2.4;
+        margin: 0 2px;
+        font-size: 10px;
+        line-height: 2.4;
     }
 `
