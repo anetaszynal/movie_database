@@ -13,8 +13,7 @@ export const fetchApi = async ({path, parameters}) => {
     ...(parameters || {}),
   };
 
-  //const response = await fetch(`${API_URL}${path}?${buildQueryString(allParameters)}`);
-  const response = await fetch(`${API_URL}${path}?api_key=${API_KEY}`);
+  const response = await fetch(`${API_URL}${path}?${buildQueryString(allParameters)}`);
 
   if (!response.ok) {
     throw new Error(response.statusText)

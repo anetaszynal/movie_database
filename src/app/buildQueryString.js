@@ -1,15 +1,15 @@
 export const buildQueryString = (parameters, initialQueryString) => {
-  const URLSearchParams = new URLSearchParams(initialQueryString);
+  const urlSearchParams = new URLSearchParams(initialQueryString);
 
   for (const name in parameters) {
     const value = parameters[name];
 
     if (value === undefined) {
-      URLSearchParams.delete(name);
+      urlSearchParams.delete(name);
     } else {
-      URLSearchParams.set(name, value)
+      urlSearchParams.set(name, value)
     }
   }
 
-  return URLSearchParams.toString();
+  return urlSearchParams.toString();
 };
