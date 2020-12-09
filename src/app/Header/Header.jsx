@@ -1,5 +1,6 @@
 import React from 'react'
-import { ContentWrapper, Logo, Wrapper, List, ListItem, Search } from './styled'
+import {Search} from './Search'
+import { ContentWrapper, Logo, Wrapper, List, ListItem } from './styled'
 
 export const Header = () => {
   return (
@@ -12,9 +13,7 @@ export const Header = () => {
             <ListItem border>PEOPLE</ListItem>
           </List>
         </nav>
-        <Search
-        placeholder={`Search for movies...`}
-        />
+        <Search/>
       </ContentWrapper>
     </Wrapper>
   )
