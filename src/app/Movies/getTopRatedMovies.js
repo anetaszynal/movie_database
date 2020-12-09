@@ -6,3 +6,11 @@ export const getTopRatedMovies = ({ page }) => fetchApi({
     page,
   }
 })
+
+export const getSearchedMovies = ({ page, query }) => fetchApi({
+  path: '/search/movie',
+  parameters: {
+    page,
+    query,
+  }
+})
