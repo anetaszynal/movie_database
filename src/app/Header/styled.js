@@ -27,7 +27,7 @@ export const ContentWrapper = styled.div`
   `
 
 const flexGap = 16
-const mobileFlexGap = 12
+const mobileFlexGap = 6
 
 export const List = styled.ul`
   color: ${({ theme }) => theme.colors.white};
@@ -61,7 +61,7 @@ export const ListItem = styled.li`
     
     @media (max-width: ${({ theme }) => theme.breakpoint.headerBreak}) {
       padding: 8px 12px;
-      font-size: 12px;
+      font-size: 10px;
   }
 `}
 `
