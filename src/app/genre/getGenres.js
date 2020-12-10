@@ -1,5 +1,6 @@
 import { fetchApi } from '../fetchApi'
+import { APP_ROUTES } from '../../lib/utils'
 
 export const getGenres = () => fetchApi({
-  path: '/genre/movie/list',
+  path: APP_ROUTES.genres,
 })
