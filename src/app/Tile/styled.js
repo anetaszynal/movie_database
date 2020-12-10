@@ -12,6 +12,7 @@ export const TileWrapper = styled.article`
   grid-template-areas: "picture" "meta";
   grid-template-rows: auto 1fr;
   grid-gap: 16px;
+  transition: 300ms;
   
     @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
       grid-template-columns: 114px 1fr;
@@ -28,6 +29,11 @@ export const TileWrapper = styled.article`
         grid-gap: 8px;
       }
   `}
+    
+    &:hover{
+      transform: scale(1.02);
+      cursor: pointer;
+    }
 `
 
 export const Image = styled.div`

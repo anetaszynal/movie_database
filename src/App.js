@@ -5,6 +5,7 @@ import { fetchGenres } from './app/genre/genreSlice'
 import { MoviesPage } from './app/Movies/MoviesPage'
 import { Header } from './app/Header'
 import { PeoplePage } from './app/People/PeoplePage'
+import { LOCAL_ROUTES } from './lib/utils'
 
 function App () {
   const dispatch = useDispatch()
@@ -17,14 +18,14 @@ function App () {
     <HashRouter>
       <Header/>
       <Switch>
-        <Route path={"/movies"}>
+        <Route path={LOCAL_ROUTES.movies}>
           <MoviesPage/>
         </Route>
-        <Route path={"/people"}>
+        <Route path={LOCAL_ROUTES.people}>
           <PeoplePage/>
         </Route>
         <Route>
-          <Redirect to={"/people"}/>
+          <Redirect to={LOCAL_ROUTES.movies}/>
         </Route>
       </Switch>
     </HashRouter>

@@ -9,3 +9,8 @@ export const APP_ROUTES = {
   people: '/person/popular',
   searchPeople: '/search/person',
 }
+
+export const LOCAL_ROUTES = {
+  movies: '/movies',
+  people: '/people'
+}

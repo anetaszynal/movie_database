@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { ReactComponent as logoIcon } from './logoIcon.svg'
 import searchIcon from './searchIcon.svg'
+import { NavLink } from 'react-router-dom'
 
 export const Wrapper = styled.header`
   width: 100%;
@@ -50,6 +51,27 @@ export const ListItem = styled.li`
   @media (max-width: ${({ theme }) => theme.breakpoint.headerBreak}) {
     margin: 8px ${mobileFlexGap}px 24px;
   }
+`;
+
+export const Logo = styled(logoIcon)`
+  width: 220px;
+  height: 48px;
+  margin-right: 48px;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoint.headerBreak}) {
+    width: 130px;
+    height: 28px;
+    margin-right: -5px;
+  }
+`
+const activeClassName = "active";
+
+export const StyledNavLink = styled(NavLink).attrs(() => ({
+  activeClassName,
+}))`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.white};
+  transition: 300ms;
   
   ${({ border }) => border && css`
     padding: 8px 24px;
@@ -63,17 +85,14 @@ export const ListItem = styled.li`
       padding: 8px 12px;
       font-size: 10px;
   }
-`}
-`
-
-export const Logo = styled(logoIcon)`
-  width: 220px;
-  height: 48px;
-  margin-right: 48px;
   
-  @media (max-width: ${({ theme }) => theme.breakpoint.headerBreak}) {
-    width: 130px;
-    height: 28px;
-    margin-right: -5px;
-  }
-`
+    &.${activeClassName} {
+      background-color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.black};
+    }
+  
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.almostBlack};
+      color: ${({ theme }) => theme.colors.white};
+    }
+  `}`;
