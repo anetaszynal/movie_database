@@ -4,6 +4,7 @@ import {Route, Switch, HashRouter, Redirect} from 'react-router-dom'
 import { fetchGenres } from './app/genre/genreSlice'
 import { MoviesPage } from './app/Movies/MoviesPage'
 import { Header } from './app/Header'
+import { PeoplePage } from './app/People/PeoplePage'
 
 function App () {
   const dispatch = useDispatch()
@@ -19,8 +20,11 @@ function App () {
         <Route path={"/movies"}>
           <MoviesPage/>
         </Route>
+        <Route path={"/people"}>
+          <PeoplePage/>
+        </Route>
         <Route>
-          <Redirect to={"/movies"}/>
+          <Redirect to={"/people"}/>
         </Route>
       </Switch>
     </HashRouter>

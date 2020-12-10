@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {useFetchDataOnLocationSearchChange} from '../useFetchDataOnChange'
-import { actions, selectors } from './topRatedMoviesSlice'
+import {useFetchDataOnChange} from '../useFetchDataOnChange'
+import {actions, selectors} from './topRatedMoviesSlice'
 import { selectGenres } from '../genre/genreSlice'
 import { Tile } from '../Tile'
 import { getYear } from '../../lib/utils'
@@ -13,7 +13,7 @@ export const MoviesPage = () => {
   const pagination = useSelector(selectors.selectPagination)
   const genres = useSelector(selectGenres)
 
- useFetchDataOnLocationSearchChange({fetchAction : actions.fetch})
+ useFetchDataOnChange({fetchAction : actions.fetch})
 
   return (
     <ListPage
