@@ -7,7 +7,7 @@ export const Search = () => {
   const location = useLocation()
   const queryInUrl = new URLSearchParams(location.search).get('query') || ''
 
-  const [searchedValue, setSearchedValue] = useState(undefined)
+  const [searchedValue, setSearchedValue] = useState("")
 
   const onSearchInputChange = useOnSearchInputChange(setSearchedValue)
   const isSearchForPeople = location.pathname.includes("/people");
