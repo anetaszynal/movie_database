@@ -2,6 +2,10 @@ export const getYear = (date) => {
   return date.split('-')[0]
 }
 
+export const getFullDate = (date) => {
+  return date.split("-").reverse().join(".").replace(/"-"/g, ".")
+}
+
 export const APP_ROUTES = {
   genres: '/genre/movie/list',
   movies: '/movie/top_rated',
@@ -17,8 +21,7 @@ export const APP_ROUTES = {
 export const LOCAL_ROUTES = {
   movies: '/movies',
   people: '/people',
-  movieDetails: (id) => `/movie/${id}`,
-  personDetails: (id) => `/person/${id}`
+  details: (id) => `/details/${id}`,
 }
 
 export const STATUS = {

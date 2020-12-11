@@ -23,7 +23,7 @@ export const MoviesPage = () => {
               page = {pagination?.page}
               totalPages = {pagination?.totalPages}>
       {movies?.map(movie => (
-        <StyledNavLink key = {movie.id} to={LOCAL_ROUTES.movieDetails(movie.id)}>
+        <StyledNavLink key = {movie.id} to={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}>
         <Tile
               url = {movie.poster_path}
               genres = {movie?.genre_ids.map(id => genres[id])}

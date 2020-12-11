@@ -21,7 +21,7 @@ export const PeoplePage = () => {
               page = {pagination?.page}
               totalPages = {pagination?.totalPages}>
       {people?.map(person => (
-        <StyledNavLink key = {person.id} to = {LOCAL_ROUTES.personDetails(person.id)}>
+        <StyledNavLink key = {person.id} to = {LOCAL_ROUTES.details(person.id)}>
           <Tile url = {person.profile_path} title = {person.name} people/>
         </StyledNavLink>
       ))}

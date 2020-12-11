@@ -20,10 +20,10 @@ function App () {
     <HashRouter>
       <Header/>
       <Switch>
-        <Route path = {LOCAL_ROUTES.movieDetails(':id')}>
+        <Route path = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(':id')}`}>
           <MovieDetails/>
         </Route>
-        <Route path = {LOCAL_ROUTES.personDetails(':id')}>
+        <Route path = {LOCAL_ROUTES.details(':id')}>
           <PersonDetailsPage/>
         </Route>
         <Route path = {LOCAL_ROUTES.movies}>
