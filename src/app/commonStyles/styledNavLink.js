@@ -8,9 +8,10 @@ export const StyledNavLink = styled(NavLink).attrs(() => (
     activeClassName,
   }
 ))`
+  color: unset;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.white};
   transition: 300ms;
+  display: grid;
   
   ${({ border }) => border && css`
     padding: 8px 24px;
