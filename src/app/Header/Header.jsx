@@ -1,7 +1,8 @@
 import React from 'react'
 import { Search } from './Search'
-import { ContentWrapper, List, ListItem, Logo, StyledNavLink, Wrapper } from './styled'
+import { ContentWrapper, List, ListItem, Logo, Wrapper } from './styled'
 import { LOCAL_ROUTES } from '../../lib/utils'
+import { StyledNavLink } from '../commonStyles/styledNavLink'
 
 export const Header = () => (
   <Wrapper>

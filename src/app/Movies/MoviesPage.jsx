@@ -6,7 +6,8 @@ import { selectGenres } from '../genre/genreSlice'
 import { Tile } from '../Tile'
 import { getYear, LOCAL_ROUTES } from '../../lib/utils'
 import { ListPage } from '../topRatedList/ListPage'
-import { StyledNavLink } from '../Header/styled'
+import { StyledNavLink } from '../commonStyles/styledNavLink'
+
 
 export const MoviesPage = () => {
   const movies = useSelector(selectors.selectResults)

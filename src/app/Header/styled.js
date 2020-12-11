@@ -1,7 +1,5 @@
-import styled, { css } from 'styled-components'
+import styled  from 'styled-components'
 import { ReactComponent as logoIcon } from './logoIcon.svg'
-import searchIcon from './searchIcon.svg'
-import { NavLink } from 'react-router-dom'
 
 export const Wrapper = styled.header`
   width: 100%;
@@ -64,35 +62,3 @@ export const Logo = styled(logoIcon)`
     margin-right: -5px;
   }
 `
-const activeClassName = "active";
-
-export const StyledNavLink = styled(NavLink).attrs(() => ({
-  activeClassName,
-}))`
-  text-decoration: none;
-  color: ${({ theme }) => theme.colors.white};
-  transition: 300ms;
-  
-  ${({ border }) => border && css`
-    padding: 8px 24px;
-    border: 1px solid ${({ theme }) => theme.colors.white};
-    border-radius: 24px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.5;
-    
-    @media (max-width: ${({ theme }) => theme.breakpoint.headerBreak}) {
-      padding: 8px 12px;
-      font-size: 10px;
-  }
-  
-    &.${activeClassName} {
-      background-color: ${({ theme }) => theme.colors.white};
-      color: ${({ theme }) => theme.colors.black};
-    }
-  
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.almostBlack};
-      color: ${({ theme }) => theme.colors.white};
-    }
-  `}`;
