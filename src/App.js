@@ -7,6 +7,7 @@ import { Header } from './app/Header'
 import { PeoplePage } from './app/People'
 import { MovieDetails } from './app/MovieDetails'
 import { LOCAL_ROUTES } from './lib/utils'
+import { PersonDetailsPage } from './app/PersonDetails'
 
 function App () {
   const dispatch = useDispatch()
@@ -21,6 +22,9 @@ function App () {
       <Switch>
         <Route path = {LOCAL_ROUTES.movieDetails(':id')}>
           <MovieDetails/>
+        </Route>
+        <Route path = {LOCAL_ROUTES.personDetails(':id')}>
+          <PersonDetailsPage/>
         </Route>
         <Route path = {LOCAL_ROUTES.movies}>
           <MoviesPage/>
