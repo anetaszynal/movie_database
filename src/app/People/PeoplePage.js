@@ -17,14 +17,17 @@ export const PeoplePage = () => {
         people
         title = 'Popular People'
         status = {status}
-        children = {people?.map(person => (
+        page = {pagination?.page}
+        totalPages = {pagination?.totalPages}
+      >
+        {people?.map(person => (
           <Tile
+            key={person.id}
             url = {person.profile_path}
             title = {person.name}
             people
           />
-      ))}
-        page = {pagination?.page}
-        totalPages = {pagination?.totalPages}/>
+        ))}
+      </ListPage>
   )
 }
