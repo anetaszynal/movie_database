@@ -1,9 +1,13 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.main`
   padding: 16px;
   max-width: 1400px;
   margin: 0 auto;
+  
+  @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+      padding: 10px;
+  }
 `
 
 export const TileList = styled.section`
@@ -12,8 +16,16 @@ export const TileList = styled.section`
   grid-gap: 24px;
   
   @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-      grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
-    }
+      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  }
+  
+  ${({ people }) => people && css`
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  
+   @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+     grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+  }
+  `}
 `
 
 export const Title = styled.h1`

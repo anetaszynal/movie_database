@@ -11,6 +11,7 @@ export const Input = styled.input`
   padding-left: 64px;
   font-size: 16px;
   line-height: 1.5;
+  transition: 300ms;
   
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     width: 100%;
@@ -20,4 +21,13 @@ export const Input = styled.input`
     background: url(${searchIcon}) no-repeat center left 17px /13px ${({ theme }) => theme.colors.white};
     padding-left: 40px;
   }
+  
+  &:hover {
+    box-shadow: 0 1px 6px 1px ${({ theme }) => theme.colors.grey};
+    border: 1px solid ${({ theme }) => theme.colors.grey};
+  }
+   
+   &:focus{
+     color: ${({ theme }) => theme.colors.black};
+   }
 `

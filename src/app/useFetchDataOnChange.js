@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useLocation } from 'react-router-dom';
 import { useEffect } from "react";
 
-export function useFetchDataOnLocationSearchChange ({fetchAction}) {
+export function useFetchDataOnChange ({fetchAction}) {
   const dispatch = useDispatch();
   const location = useLocation();
 

@@ -1,25 +1,14 @@
-import {
-  AverageVotes,
-  Caption,
-  Image,
-  List,
-  ListItem,
-  Meta,
-  Star,
-  TileWrapper,
-  Title,
-  Votes,
-  VoteWrapper
-} from './styled'
+import { Caption, Image, List, ListItem, Meta, TileWrapper, Title, } from './styled'
+import { Vote } from './Vote'
 
-export const Tile = ({ url, title, genres, caption, averageVotes, votes }) => {
+export const Tile = ({ url, title, genres, caption, people, averageVotes, votes }) => {
 
   return (
-    <TileWrapper>
+    <TileWrapper people={people}>
       <Image url = {url}/>
       <Meta>
         <div>
-          <Title>{title}</Title>
+          <Title people={people}>{title}</Title>
           <Caption>{caption}</Caption>
           <List>
             {genres?.map((genre, index) => (
@@ -27,11 +16,7 @@ export const Tile = ({ url, title, genres, caption, averageVotes, votes }) => {
             ))}
           </List>
         </div>
-        <VoteWrapper>
-          <Star/>
-          <AverageVotes>{averageVotes}</AverageVotes>
-          <Votes>{votes}</Votes>
-        </VoteWrapper>
+        <Vote votes={votes} averageVotes={averageVotes}/>
       </Meta>
     </TileWrapper>
   )

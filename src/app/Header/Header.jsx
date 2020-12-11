@@ -1,6 +1,7 @@
 import React from 'react'
-import {Search} from './Search'
-import { ContentWrapper, Logo, Wrapper, List, ListItem } from './styled'
+import { Search } from './Search'
+import { ContentWrapper, List, ListItem, Logo, StyledNavLink, Wrapper } from './styled'
+import { LOCAL_ROUTES } from '../../lib/utils'
 
 export const Header = () => {
   return (
@@ -8,9 +9,15 @@ export const Header = () => {
       <ContentWrapper>
         <nav>
           <List>
-            <ListItem><Logo/></ListItem>
-            <ListItem border>MOVIES</ListItem>
-            <ListItem border>PEOPLE</ListItem>
+            <ListItem>
+              <StyledNavLink to = {LOCAL_ROUTES.movies}><Logo/></StyledNavLink>
+            </ListItem>
+            <ListItem>
+              <StyledNavLink to = {LOCAL_ROUTES.movies} border>MOVIES</StyledNavLink>
+            </ListItem>
+            <ListItem>
+              <StyledNavLink to = {LOCAL_ROUTES.people} border>PEOPLE</StyledNavLink>
+            </ListItem>
           </List>
         </nav>
         <Search/>

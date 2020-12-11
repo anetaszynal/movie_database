@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {useFetchDataOnLocationSearchChange} from '../useFetchDataOnChange'
+import { useFetchDataOnChange } from '../useFetchDataOnChange'
 import { actions, selectors } from './topRatedMoviesSlice'
 import { selectGenres } from '../genre/genreSlice'
 import { Tile } from '../Tile'
@@ -13,24 +13,22 @@ export const MoviesPage = () => {
   const pagination = useSelector(selectors.selectPagination)
   const genres = useSelector(selectGenres)
 
- useFetchDataOnLocationSearchChange({fetchAction : actions.fetch})
+  useFetchDataOnChange({ fetchAction: actions.fetch })
 
   return (
-    <ListPage
-      title ="Top rated Movies"
-      status = {status}
-      children = {movies?.map(movie => (
+    <ListPage title = "Top rated Movies"
+              status = {status}
+              page = {pagination?.page}
+              totalPages = {pagination?.totalPages}>
+      {movies?.map(movie => (
         <Tile key = {movie.id}
               url = {movie.poster_path}
               genres = {movie?.genre_ids.map(id => genres[id])}
               title = {movie.title}
               caption = {getYear(movie.release_date)}
               averageVotes = {movie.vote_average}
-              votes = {movie.vote_count}
-        />
+              votes = {movie.vote_count}/>
       ))}
-      page={pagination?.page}
-      totalPages={pagination?.totalPages}
-      />
+    </ListPage>
   )
 }

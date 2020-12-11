@@ -36,7 +36,7 @@ export const ChangePageButton = styled.button`
        color: ${({ theme }) => theme.colors.black};
        &:hover{
           filter: brightness(100%);
-          cursor: default;
+          cursor: not-allowed;
          }
     }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
