@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components'
+import { APP_ROUTES } from '../../lib/utils'
 
-const API_IMMAGE_PATH = 'https://image.tmdb.org/t/p/w500'
 
 export const Image = styled.div`
   padding-top: calc(100% * 434 / 292);
   border-radius: 5px;
-  background-image: url("${API_IMMAGE_PATH}${({ url }) => url}");
+  background-image: url("${APP_ROUTES.image}${({ url }) => url}");
   background-size: cover;
   background-position: top;
   grid-area: picture;

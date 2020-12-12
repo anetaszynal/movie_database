@@ -15,7 +15,8 @@ export const APP_ROUTES = {
   movieDetails: '/movie/',
   movieCredits: '/credits',
   personDetails: '/person/',
-  personCredits: '/movie_credits'
+  personCredits: '/movie_credits',
+  image: 'https://image.tmdb.org/t/p/w500',
 }
 
 export const LOCAL_ROUTES = {
