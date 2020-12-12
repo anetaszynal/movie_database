@@ -4,8 +4,10 @@ import { useFetchDataOnChange } from '../useFetchDataOnChange'
 import { actions, selectors } from './topRatedMoviesSlice'
 import { selectGenres } from '../genre/genreSlice'
 import { Tile } from '../Tile'
-import { getYear } from '../../lib/utils'
+import { getYear, LOCAL_ROUTES } from '../../lib/utils'
 import { ListPage } from '../topRatedList/ListPage'
+import { StyledNavLink } from '../commonStyles/styledNavLink'
+
 
 export const MoviesPage = () => {
   const movies = useSelector(selectors.selectResults)
@@ -21,13 +23,15 @@ export const MoviesPage = () => {
               page = {pagination?.page}
               totalPages = {pagination?.totalPages}>
       {movies?.map(movie => (
-        <Tile key = {movie.id}
+        <StyledNavLink key = {movie.id} to={LOCAL_ROUTES.movieDetails(movie.id)}>
+        <Tile
               url = {movie.poster_path}
               genres = {movie?.genre_ids.map(id => genres[id])}
               title = {movie.title}
               caption = {getYear(movie.release_date)}
               averageVotes = {movie.vote_average}
               votes = {movie.vote_count}/>
+        </StyledNavLink>
       ))}
     </ListPage>
   )

@@ -1,5 +1,5 @@
 export const getYear = (date) => {
-  return date.split("-")[0]
+  return date.split('-')[0]
 }
 
 export const APP_ROUTES = {
@@ -8,9 +8,22 @@ export const APP_ROUTES = {
   searchMovies: '/search/movie',
   people: '/person/popular',
   searchPeople: '/search/person',
+  movieDetails: '/movie/',
+  movieCredits: '/credits',
+  personDetails: '/person/',
+  personCredits: '/movie_credits'
 }
 
 export const LOCAL_ROUTES = {
   movies: '/movies',
-  people: '/people'
+  people: '/people',
+  movieDetails: (id) => `/movie/${id}`,
+  personDetails: (id) => `/person/${id}`
+}
+
+export const STATUS = {
+  initial: 'initial',
+  success: 'success',
+  loading: 'loading',
+  error: 'error'
 }

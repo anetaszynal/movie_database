@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import {Route, Switch, HashRouter, Redirect} from 'react-router-dom'
+import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
 import { fetchGenres } from './app/genre/genreSlice'
-import { MoviesPage } from './app/Movies/MoviesPage'
+import { MoviesPage } from './app/Movies'
 import { Header } from './app/Header'
-import { PeoplePage } from './app/People/PeoplePage'
+import { PeoplePage } from './app/People'
+import { MovieDetails } from './app/MovieDetails'
 import { LOCAL_ROUTES } from './lib/utils'
+import { PersonDetailsPage } from './app/PersonDetails'
 
 function App () {
   const dispatch = useDispatch()
@@ -18,14 +20,20 @@ function App () {
     <HashRouter>
       <Header/>
       <Switch>
-        <Route path={LOCAL_ROUTES.movies}>
+        <Route path = {LOCAL_ROUTES.movieDetails(':id')}>
+          <MovieDetails/>
+        </Route>
+        <Route path = {LOCAL_ROUTES.personDetails(':id')}>
+          <PersonDetailsPage/>
+        </Route>
+        <Route path = {LOCAL_ROUTES.movies}>
           <MoviesPage/>
         </Route>
-        <Route path={LOCAL_ROUTES.people}>
+        <Route path = {LOCAL_ROUTES.people}>
           <PeoplePage/>
         </Route>
         <Route>
-          <Redirect to={LOCAL_ROUTES.movies}/>
+          <Redirect to = {LOCAL_ROUTES.movies}/>
         </Route>
       </Switch>
     </HashRouter>
