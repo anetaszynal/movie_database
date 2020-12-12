@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
+export const Container = styled.main`
+  padding: 0 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+`
+
 const activeClassName = 'active'
 
 export const StyledNavLink = styled(NavLink).attrs(() => (
