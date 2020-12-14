@@ -1,9 +1,9 @@
 export const getYear = (date) => {
-  return date.split("-")[0];
+  return date?.split("-")[0];
 };
 
 export const getFullDate = (date) => {
-  return date.split("-").reverse().join(".").replace(/"-"/g, ".");
+  return date?.split("-").reverse().join(".").replace(/"-"/g, ".");
 };
 
 export const APP_ROUTES = {

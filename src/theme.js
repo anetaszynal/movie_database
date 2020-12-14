@@ -13,7 +13,10 @@ export const theme = {
   },
 
   fontSize: {
+    backdrop: "64px",
     title: "36px",
+    backdropVote: "30px",
+    mobileBackdrop: "24px",
     secondTitle: "22px",
     description: "20px",
     additionalInfo: "18px",
@@ -21,7 +24,7 @@ export const theme = {
     small: "14px",
     mobileStandard: "13px",
     mobileAdditionalInfo: "12px",
-    mobileSmall: "10px"
+    mobileSmall: "10px",
   },
 
   lineHeight: {
@@ -30,11 +33,11 @@ export const theme = {
     listLine: "1.4",
     titleLine: "1.3",
     small: "1.2",
-    mobile: "1.1"
+    mobile: "1.1",
   },
 
   breakpoint: {
     headerBreak: "1050px",
-    mobile: "787px"
-  }
+    mobile: "787px",
+  },
 };

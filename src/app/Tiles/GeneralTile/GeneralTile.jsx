@@ -18,7 +18,7 @@ export const GeneralTile = ({
     <Meta people={people}>
       <InsideMeta>
         <Title people={people}>{title}</Title>
-        {!!caption && <Caption>{caption}</Caption>}
+        {!!caption && <Caption people={people}>{caption}</Caption>}
         {genres?.length > 0 && <GenresList genres={genres} />}
       </InsideMeta>
       {!people && <Vote votes={votes} averageVotes={averageVotes} />}
