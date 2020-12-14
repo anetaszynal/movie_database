@@ -34,7 +34,7 @@ export const createDetailsSlice = ({ name }) => {
     actions: slice.actions,
     selectors: {
       selectStatus: state => state[name].status,
-      selectDetail: state => state[name].detail,
+      selectDetails: state => state[name].details,
       selectCast: state => state[name].cast,
       selectCrew: state => state[name].crew,
     }

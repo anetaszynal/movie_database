@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux'
 import { useFetchDataOnChange } from '../useFetchDataOnChange'
 import { actions, selectors } from './topRatedMoviesSlice'
 import { selectGenres } from '../genre/genreSlice'
-import { Tile } from '../Tile'
+import { GeneralTile } from '../Tiles/GeneralTile'
 import { getYear, LOCAL_ROUTES } from '../../lib/utils'
 import { ListPage } from '../topRatedList/ListPage'
-import { StyledNavLink } from '../commonStyles/styledNavLink'
+import { StyledNavLink } from '../common/commonStyles'
 
 
 export const MoviesPage = () => {
@@ -23,8 +23,8 @@ export const MoviesPage = () => {
               page = {pagination?.page}
               totalPages = {pagination?.totalPages}>
       {movies?.map(movie => (
-        <StyledNavLink key = {movie.id} to={LOCAL_ROUTES.movieDetails(movie.id)}>
-        <Tile
+        <StyledNavLink key = {movie.id} to={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}>
+        <GeneralTile
               url = {movie.poster_path}
               genres = {movie?.genre_ids.map(id => genres[id])}
               title = {movie.title}

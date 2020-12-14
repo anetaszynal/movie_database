@@ -1,8 +1,8 @@
-import React from 'react'
-import { Search } from './Search'
-import { ContentWrapper, List, ListItem, Logo, Wrapper } from './styled'
-import { LOCAL_ROUTES } from '../../lib/utils'
-import { StyledNavLink } from '../commonStyles/styledNavLink'
+import React from "react";
+import { Search } from "./Search";
+import { ContentWrapper, List, ListItem, Logo, Wrapper } from "./styled";
+import { LOCAL_ROUTES } from "../../lib/utils";
+import { StyledNavLink } from "../common/commonStyles";
 
 export const Header = () => (
   <Wrapper>
@@ -10,17 +10,23 @@ export const Header = () => (
       <nav>
         <List>
           <ListItem>
-            <StyledNavLink to = {LOCAL_ROUTES.movies}><Logo/></StyledNavLink>
+            <StyledNavLink to={LOCAL_ROUTES.movies}>
+              <Logo />
+            </StyledNavLink>
           </ListItem>
           <ListItem>
-            <StyledNavLink to = {LOCAL_ROUTES.movies} border = "true">MOVIES</StyledNavLink>
+            <StyledNavLink to={LOCAL_ROUTES.movies} border={true}>
+              MOVIES
+            </StyledNavLink>
           </ListItem>
           <ListItem>
-            <StyledNavLink to = {LOCAL_ROUTES.people} border = "true">PEOPLE</StyledNavLink>
+            <StyledNavLink to={LOCAL_ROUTES.people} border={true}>
+              PEOPLE
+            </StyledNavLink>
           </ListItem>
         </List>
       </nav>
-      <Search/>
+      <Search />
     </ContentWrapper>
   </Wrapper>
-)
+);

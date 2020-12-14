@@ -1,15 +1,5 @@
 import styled, { css } from 'styled-components'
 
-export const Container = styled.main`
-  padding: 16px;
-  max-width: 1400px;
-  margin: 0 auto;
-  
-  @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-      padding: 10px;
-  }
-`
-
 export const TileList = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));

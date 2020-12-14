@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
 
-const API_IMMAGE_PATH = 'https://image.tmdb.org/t/p/w500'
-
 export const TileWrapper = styled.article`
   padding: 16px;
   border-radius: 5px;
@@ -36,21 +34,11 @@ export const TileWrapper = styled.article`
     }
 `
 
-export const Image = styled.div`
-  padding-top: calc(100%*632/421);
-  border-radius: 5px;
-  background-image: url("${API_IMMAGE_PATH}${({ url }) => url}");
-  background-size: cover;
-  background-position: top;
-  grid-area: picture;
-`
-
-export const Meta = styled.div`
-  grid-area: meta;
+export const InsideMeta = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-`
+  grid-template-columns: 1f;
+  grid-gap: 8px;
+`;
 
 export const Title = styled.h2`
   margin: 0;
@@ -70,7 +58,7 @@ export const Title = styled.h2`
 `
 
 export const Caption = styled.h3`
-  margin: 8px 0 0;
+  margin: 0;
   color: ${({ theme }) => theme.colors.darkerGrey};
   font-size: ${({ theme }) => theme.fontSize.standard};
   font-weight: 400;
@@ -80,31 +68,5 @@ export const Caption = styled.h3`
    @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
       font-size: ${({ theme }) => theme.fontSize.mobileStandard};
       margin: 4px 0 0;
-    }
-`
-
-const tagsGap = 8
-
-export const List = styled.ul`
-   list-style-type: none;
-   list-style-position: inside;
-   padding: 0;
-   margin: 0 -${tagsGap / 2}px;
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-`
-
-export const ListItem = styled.li`
-   margin: ${tagsGap}px ${tagsGap / 2}px 0;
-   padding: 8px 16px;
-   border-radius: 5px;
-   background-color: ${({ theme }) => theme.colors.grey};
-   font-size: ${({ theme }) => theme.fontSize.small};
-   line-height: ${({ theme }) => theme.lineHeight.listLine};
-   
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-      font-size: ${({ theme }) => theme.fontSize.mobileSmall};
-      line-height: ${({ theme }) => theme.lineHeight.mobile};
     }
 `

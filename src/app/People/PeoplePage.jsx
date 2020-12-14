@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux'
 import { useFetchDataOnChange } from '../useFetchDataOnChange'
 import { actions, selectors } from './peopleSlice'
 import { ListPage } from '../topRatedList/ListPage'
-import { Tile } from '../Tile'
+import { GeneralTile } from '../Tiles/GeneralTile'
 import { LOCAL_ROUTES } from '../../lib/utils'
-import { StyledNavLink } from '../commonStyles/styledNavLink'
+import { StyledNavLink } from '../common/commonStyles'
 
 export const PeoplePage = () => {
   const people = useSelector(selectors.selectResults)
@@ -21,8 +21,8 @@ export const PeoplePage = () => {
               page = {pagination?.page}
               totalPages = {pagination?.totalPages}>
       {people?.map(person => (
-        <StyledNavLink key = {person.id} to = {LOCAL_ROUTES.personDetails(person.id)}>
-          <Tile url = {person.profile_path} title = {person.name} people/>
+        <StyledNavLink key = {person.id} to = {LOCAL_ROUTES.details(person.id)}>
+          <GeneralTile url = {person.profile_path} title = {person.name} people/>
         </StyledNavLink>
       ))}
     </ListPage>
