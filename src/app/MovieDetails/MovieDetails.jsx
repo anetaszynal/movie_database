@@ -53,48 +53,52 @@ export const MovieDetails = () => {
               averageVotes={details.vote_average}
               description={details.overview}
             />
-            <TilesList people title="Cast">
-              {cast?.map((person) => (
-                <StyledNavLink
-                  key={person.credit_id}
-                  to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(
-                    person.id
-                  )}`}
-                >
-                  <GeneralTile
-                    image={getImage({
-                      path: person.profile_path,
-                      size: "medium",
-                    })}
-                    imagePlaceholder={noPersonPosterIcon}
-                    title={person.name}
-                    caption={person.character}
-                    people
-                  />
-                </StyledNavLink>
-              ))}
-            </TilesList>
-            <TilesList people title="Crew">
-              {crew?.map((person) => (
-                <StyledNavLink
-                  key={person.credit_id}
-                  to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(
-                    person.id
-                  )}`}
-                >
-                  <GeneralTile
-                    image={getImage({
-                      path: person.profile_path,
-                      size: "medium",
-                    })}
-                    imagePlaceholder={noPersonPosterIcon}
-                    title={person.name}
-                    caption={person.job}
-                    people
-                  />
-                </StyledNavLink>
-              ))}
-            </TilesList>
+            {cast.length > 0 && (
+              <TilesList people title="Cast">
+                {cast.map((person) => (
+                  <StyledNavLink
+                    key={person.credit_id}
+                    to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(
+                      person.id
+                    )}`}
+                  >
+                    <GeneralTile
+                      image={getImage({
+                        path: person.profile_path,
+                        size: "medium",
+                      })}
+                      imagePlaceholder={noPersonPosterIcon}
+                      title={person.name}
+                      caption={person.character}
+                      people
+                    />
+                  </StyledNavLink>
+                ))}
+              </TilesList>
+            )}
+            {crew.length > 0 && (
+              <TilesList people title="Crew">
+                {crew.map((person) => (
+                  <StyledNavLink
+                    key={person.credit_id}
+                    to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(
+                      person.id
+                    )}`}
+                  >
+                    <GeneralTile
+                      image={getImage({
+                        path: person.profile_path,
+                        size: "medium",
+                      })}
+                      imagePlaceholder={noPersonPosterIcon}
+                      title={person.name}
+                      caption={person.job}
+                      people
+                    />
+                  </StyledNavLink>
+                ))}
+              </TilesList>
+            )}
           </>
         </Container>
       </>

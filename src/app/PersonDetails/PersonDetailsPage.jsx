@@ -20,6 +20,8 @@ export const PersonDetailsPage = () => {
   const status = useSelector(selectors.selectStatus);
   const genres = useSelector(selectGenres);
   const { id } = useParams();
+  const castLength = cast?.length;
+  const crewLength = crew?.length;
 
   useEffect(() => {
     dispatch(actions.fetch(id));
@@ -40,42 +42,48 @@ export const PersonDetailsPage = () => {
           secondInfo={person.place_of_birth}
           description={person.biography}
         />
-        <TilesList title={`Movies - cast (${cast.length})`}>
-          {cast?.map((movie) => (
-            <StyledNavLink
-              key={`${movie.character}-${movie.id}`}
-              to={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}
-            >
-              <GeneralTile
-                image={getImage({ path: movie.poster_path, size: "medium" })}
-                imagePlaceholder={noMoviePosterIcon}
-                genres={movie.genre_ids.map((id) => genres[id])}
-                title={movie.title}
-                caption={`${movie.character} (${getYear(movie.release_date)})`}
-                averageVotes={movie.vote_average}
-                votes={movie.vote_count}
-              />
-            </StyledNavLink>
-          ))}
-        </TilesList>
-        <TilesList title={`Movies - crew (${crew.length})`}>
-          {crew?.map((movie) => (
-            <StyledNavLink
-              key={`${movie.job}-${movie.id}`}
-              to={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}
-            >
-              <GeneralTile
-                image={getImage({ path: movie.poster_path, size: "medium" })}
-                imagePlaceholder={noMoviePosterIcon}
-                genres={movie?.genre_ids.map((id) => genres[id])}
-                title={movie.title}
-                caption={`${movie.job} (${getYear(movie.release_date)})`}
-                averageVotes={movie.vote_average}
-                votes={movie.vote_count}
-              />
-            </StyledNavLink>
-          ))}
-        </TilesList>
+        {castLength > 0 && (
+          <TilesList title={`Movies - cast (${castLength})`}>
+            {cast?.map((movie) => (
+              <StyledNavLink
+                key={`${movie.character}-${movie.id}`}
+                to={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}
+              >
+                <GeneralTile
+                  image={getImage({ path: movie.poster_path, size: "medium" })}
+                  imagePlaceholder={noMoviePosterIcon}
+                  genres={movie.genre_ids.map((id) => genres[id])}
+                  title={movie.title}
+                  caption={`${movie.character} (${getYear(
+                    movie.release_date
+                  )})`}
+                  averageVotes={movie.vote_average}
+                  votes={movie.vote_count}
+                />
+              </StyledNavLink>
+            ))}
+          </TilesList>
+        )}
+        {crewLength > 0 && (
+          <TilesList title={`Movies - crew (${crewLength})`}>
+            {crew?.map((movie) => (
+              <StyledNavLink
+                key={`${movie.job}-${movie.id}`}
+                to={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}
+              >
+                <GeneralTile
+                  image={getImage({ path: movie.poster_path, size: "medium" })}
+                  imagePlaceholder={noMoviePosterIcon}
+                  genres={movie?.genre_ids.map((id) => genres[id])}
+                  title={movie.title}
+                  caption={`${movie.job} (${getYear(movie.release_date)})`}
+                  averageVotes={movie.vote_average}
+                  votes={movie.vote_count}
+                />
+              </StyledNavLink>
+            ))}
+          </TilesList>
+        )}
       </Container>
     )
   );
