@@ -15,12 +15,22 @@ export const MoviesPage = () => {
   const status = useSelector(selectors.selectStatus);
   const pagination = useSelector(selectors.selectPagination);
   const genres = useSelector(selectGenres);
+  const query = useSelector(selectors.selectQuery);
 
   useFetchDataOnChange({ fetchAction: actions.fetch });
 
   return (
     <ListPage
-      title="Top rated Movies"
+      title={
+        query ? (
+          <>
+            Search results for <q>{query}</q>
+            {pagination?.totalResults && ` (${pagination.totalResults})`}
+          </>
+        ) : (
+          "Top rated Movies"
+        )
+      }
       status={status}
       page={pagination?.page}
       totalPages={pagination?.totalPages}

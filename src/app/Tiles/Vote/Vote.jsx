@@ -16,7 +16,9 @@ export const Vote = ({ averageVotes, votes, detail, backdrop }) => (
             </For>
           )}
         </Wrapper>
-        <Votes backdrop={backdrop} detail={detail}>{`${votes} votes`}</Votes>
+        <Votes backdrop={backdrop} detail={detail}>{`${votes} ${
+          votes === 1 ? "vote" : "votes"
+        }`}</Votes>
       </>
     ) : (
       <Votes>No votes yet</Votes>

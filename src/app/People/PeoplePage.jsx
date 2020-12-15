@@ -13,13 +13,23 @@ export const PeoplePage = () => {
   const people = useSelector(selectors.selectResults);
   const status = useSelector(selectors.selectStatus);
   const pagination = useSelector(selectors.selectPagination);
+  const query = useSelector(selectors.selectQuery);
 
   useFetchDataOnChange({ fetchAction: actions.fetch });
 
   return (
     <ListPage
       people
-      title="Popular People"
+      title={
+        query ? (
+          <>
+            Search results for <q>{query}</q>
+            {pagination?.totalResults && ` (${pagination.totalResults})`}
+          </>
+        ) : (
+          "Popular People"
+        )
+      }
       status={status}
       page={pagination?.page}
       totalPages={pagination?.totalPages}
