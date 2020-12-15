@@ -8,7 +8,7 @@ export const Poster = styled.article`
     linear-gradient(to right, transparent 68%, #000000 95%),
     linear-gradient(to left, transparent 68%, #000000 95%),
     linear-gradient(to bottom, transparent 60%, #000000 95%),
-    url("${APP_ROUTES.image}${({ url }) => url}") no-repeat center;
+    url(${({ url }) => url}) no-repeat center;
   background-size: cover;
 `;
 

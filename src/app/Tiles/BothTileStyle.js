@@ -1,13 +1,20 @@
 import styled, { css } from "styled-components";
-import { APP_ROUTES } from "../../lib/utils";
 
 export const Image = styled.div`
   padding-top: calc(100% * 434 / 292);
   border-radius: 5px;
-  background-image: url("${APP_ROUTES.image}${({ url }) => url}");
+  background-image: url(${({ url }) => url});
   background-size: cover;
   background-position: center;
   grid-area: picture;
+
+  ${({ noImage }) =>
+    noImage &&
+    css`
+      background-color: ${({ theme }) => theme.colors.imageBackground};
+      background-size: 50%;
+      background-repeat: no-repeat;
+    `}
 `;
 
 export const Meta = styled.div`

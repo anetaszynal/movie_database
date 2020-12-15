@@ -6,8 +6,11 @@ import { Container, StyledNavLink } from "../common/commonStyles";
 import { selectGenres } from "../genre/genreSlice";
 import { DetailTile } from "../Tiles/DetailTile";
 import { GeneralTile } from "../Tiles/GeneralTile";
+import { getImage } from "../Tiles/getImage";
 import { TilesList } from "../TilesList";
 import { actions, selectors } from "./personDetailsSlice";
+import noPersonPosterIcon from "../images/noPersonPosterIcon.svg";
+import noMoviePosterIcon from "../images/noMoviePosterIcon.svg";
 
 export const PersonDetailsPage = () => {
   const dispatch = useDispatch();
@@ -28,7 +31,8 @@ export const PersonDetailsPage = () => {
         <DetailTile
           people
           detail
-          url={person.profile_path}
+          image={getImage({ path: person.profile_path, size: "medium" })}
+          imagePlaceholder={noPersonPosterIcon}
           title={person.name}
           firstInfoName="Date of birth:"
           secondInfoName="Place of birth"
@@ -39,12 +43,13 @@ export const PersonDetailsPage = () => {
         <TilesList title={`Movies - cast (${cast.length})`}>
           {cast?.map((movie) => (
             <StyledNavLink
-              key={movie.id}
+              key={`${movie.character}-${movie.id}`}
               to={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}
             >
               <GeneralTile
-                url={movie.poster_path}
-                genres={movie?.genre_ids.map((id) => genres[id])}
+                image={getImage({ path: movie.poster_path, size: "medium" })}
+                imagePlaceholder={noMoviePosterIcon}
+                genres={movie.genre_ids.map((id) => genres[id])}
                 title={movie.title}
                 caption={`${movie.character} (${getYear(movie.release_date)})`}
                 averageVotes={movie.vote_average}
@@ -56,11 +61,12 @@ export const PersonDetailsPage = () => {
         <TilesList title={`Movies - crew (${crew.length})`}>
           {crew?.map((movie) => (
             <StyledNavLink
-              key={movie.id}
+              key={`${movie.job}-${movie.id}`}
               to={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}
             >
               <GeneralTile
-                url={movie.poster_path}
+                image={getImage({ path: movie.poster_path, size: "medium" })}
+                imagePlaceholder={noMoviePosterIcon}
                 genres={movie?.genre_ids.map((id) => genres[id])}
                 title={movie.title}
                 caption={`${movie.job} (${getYear(movie.release_date)})`}

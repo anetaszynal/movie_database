@@ -9,6 +9,9 @@ import { TilesList } from "../TilesList";
 import { LOCAL_ROUTES } from "../../lib/utils";
 import { GeneralTile } from "../Tiles/GeneralTile";
 import { Backdrop } from "./Backdrop";
+import { getImage } from "../Tiles/getImage";
+import noMoviePosterIcon from "../images/noMoviePosterIcon.svg";
+import noPersonPosterIcon from "../images/noPersonPosterIcon.svg";
 
 export const MovieDetails = () => {
   const details = useSelector(selectors.selectDetails);
@@ -27,7 +30,7 @@ export const MovieDetails = () => {
       <>
         {details.backdrop_path && (
           <Backdrop
-            url={details.backdrop_path}
+            image={getImage({ path: details.backdrop_path, size: "big" })}
             title={details.title}
             votes={details.vote_count}
             averageVotes={details.vote_average}
@@ -37,7 +40,8 @@ export const MovieDetails = () => {
           <>
             <DetailTile
               detail
-              url={details.poster_path}
+              image={getImage({ path: details.poster_path, size: "medium" })}
+              imagePlaceholder={noMoviePosterIcon}
               title={details.title}
               caption={getYear(details.release_date)}
               firstInfoName="Production:"
@@ -58,7 +62,11 @@ export const MovieDetails = () => {
                   )}`}
                 >
                   <GeneralTile
-                    url={person.profile_path}
+                    image={getImage({
+                      path: person.profile_path,
+                      size: "medium",
+                    })}
+                    imagePlaceholder={noPersonPosterIcon}
                     title={person.name}
                     caption={person.character}
                     people
@@ -75,7 +83,11 @@ export const MovieDetails = () => {
                   )}`}
                 >
                   <GeneralTile
-                    url={person.profile_path}
+                    image={getImage({
+                      path: person.profile_path,
+                      size: "medium",
+                    })}
+                    imagePlaceholder={noPersonPosterIcon}
                     title={person.name}
                     caption={person.job}
                     people

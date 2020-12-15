@@ -12,7 +12,8 @@ import {
 import { Image, Meta } from "../BothTileStyle";
 
 export const DetailTile = ({
-  url,
+  image,
+  imagePlaceholder,
   title,
   genres,
   caption,
@@ -27,7 +28,7 @@ export const DetailTile = ({
   people,
 }) => (
   <DetailTileWrapper>
-    <Image url={url} />
+    <Image url={image || imagePlaceholder} noImage={!image} />
     <Meta detail={detail}>
       <Title>{title}</Title>
       <Caption>{caption}</Caption>
