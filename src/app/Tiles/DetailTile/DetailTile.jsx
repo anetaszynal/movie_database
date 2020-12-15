@@ -16,10 +16,12 @@ export const DetailTile = ({
   title,
   genres,
   caption,
+  firstInfoName,
+  secondInfoName,
   averageVotes,
   votes,
-  production,
-  date,
+  firstInfo,
+  secondInfo,
   description,
   detail,
   people,
@@ -31,12 +33,12 @@ export const DetailTile = ({
       <Caption>{caption}</Caption>
       <div>
         <AdditionalInfo>
-          <Name>Production:</Name>
-          {production}
+          <Name>{firstInfoName}</Name>
+          {firstInfo}
         </AdditionalInfo>
         <AdditionalInfo last={true}>
-          <Name>Release date:</Name>
-          {date}
+          <Name>{secondInfoName}</Name>
+          {secondInfo}
         </AdditionalInfo>
       </div>
       {genres?.length > 0 && <GenresList genres={genres} />}

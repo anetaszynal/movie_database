@@ -1,43 +1,43 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
-import { fetchGenres } from './app/genre/genreSlice'
-import { MoviesPage } from './app/Movies'
-import { Header } from './app/Header'
-import { PeoplePage } from './app/People'
-import { MovieDetails } from './app/MovieDetails'
-import { LOCAL_ROUTES } from './lib/utils'
-import { PersonDetailsPage } from './app/PersonDetails'
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { fetchGenres } from "./app/genre/genreSlice";
+import { MoviesPage } from "./app/Movies";
+import { Header } from "./app/Header";
+import { PeoplePage } from "./app/People";
+import { MovieDetails } from "./app/MovieDetails";
+import { LOCAL_ROUTES } from "./lib/utils";
+import { PersonDetailsPage } from "./app/PersonDetails";
 
-function App () {
-  const dispatch = useDispatch()
+function App() {
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchGenres())
-  }, [dispatch])
+    dispatch(fetchGenres());
+  }, [dispatch]);
 
   return (
     <HashRouter>
-      <Header/>
+      <Header />
       <Switch>
-        <Route path = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(':id')}`}>
-          <MovieDetails/>
+        <Route path={`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(":id")}`}>
+          <MovieDetails />
         </Route>
-        <Route path = {LOCAL_ROUTES.details(':id')}>
-          <PersonDetailsPage/>
+        <Route path={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(":id")}`}>
+          <PersonDetailsPage />
         </Route>
-        <Route path = {LOCAL_ROUTES.movies}>
-          <MoviesPage/>
+        <Route path={LOCAL_ROUTES.movies}>
+          <MoviesPage />
         </Route>
-        <Route path = {LOCAL_ROUTES.people}>
-          <PeoplePage/>
+        <Route path={LOCAL_ROUTES.people}>
+          <PeoplePage />
         </Route>
         <Route>
-          <Redirect to = {LOCAL_ROUTES.movies}/>
+          <Redirect to={LOCAL_ROUTES.movies} />
         </Route>
       </Switch>
     </HashRouter>
-  )
+  );
 }
 
-export default App
+export default App;

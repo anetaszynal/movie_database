@@ -40,8 +40,10 @@ export const MovieDetails = () => {
               url={details.poster_path}
               title={details.title}
               caption={getYear(details.release_date)}
-              production={details.production_countries?.map(({ name }) => name)}
-              date={getFullDate(details.release_date)}
+              firstInfoName="Production:"
+              secondInfoName="Release date:"
+              firstInfo={details.production_countries?.map(({ name }) => name)}
+              secondInfo={getFullDate(details.release_date)}
               genres={details.genres?.map(({ name }) => name)}
               votes={details.vote_count}
               averageVotes={details.vote_average}
@@ -51,7 +53,9 @@ export const MovieDetails = () => {
               {cast?.map((person) => (
                 <StyledNavLink
                   key={person.credit_id}
-                  to={LOCAL_ROUTES.details(person.id)}
+                  to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(
+                    person.id
+                  )}`}
                 >
                   <GeneralTile
                     url={person.profile_path}
@@ -66,7 +70,9 @@ export const MovieDetails = () => {
               {crew?.map((person) => (
                 <StyledNavLink
                   key={person.credit_id}
-                  to={LOCAL_ROUTES.details(person.id)}
+                  to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(
+                    person.id
+                  )}`}
                 >
                   <GeneralTile
                     url={person.profile_path}
