@@ -15,12 +15,12 @@ export const Header = () => (
             </StyledNavLink>
           </ListItem>
           <ListItem>
-            <StyledNavLink to={LOCAL_ROUTES.movies} border={true}>
+            <StyledNavLink to={LOCAL_ROUTES.movies} border>
               MOVIES
             </StyledNavLink>
           </ListItem>
           <ListItem>
-            <StyledNavLink to={LOCAL_ROUTES.people} border={true}>
+            <StyledNavLink to={LOCAL_ROUTES.people} border>
               PEOPLE
             </StyledNavLink>
           </ListItem>
