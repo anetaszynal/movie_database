@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/movie_database/static/js/main.d6878419.chunk.js",
+    "main.js.map": "/movie_database/static/js/main.d6878419.chunk.js.map",
+    "runtime-main.js": "/movie_database/static/js/runtime-main.2b0feb3b.js",
+    "runtime-main.js.map": "/movie_database/static/js/runtime-main.2b0feb3b.js.map",
+    "static/js/2.97d17146.chunk.js": "/movie_database/static/js/2.97d17146.chunk.js",
+    "static/js/2.97d17146.chunk.js.map": "/movie_database/static/js/2.97d17146.chunk.js.map",
+    "index.html": "/movie_database/index.html",
+    "static/js/2.97d17146.chunk.js.LICENSE.txt": "/movie_database/static/js/2.97d17146.chunk.js.LICENSE.txt",
+    "static/media/LoadingIcon.317a7473.svg": "/movie_database/static/media/LoadingIcon.317a7473.svg",
+    "static/media/arrowIcon.dcfd05be.svg": "/movie_database/static/media/arrowIcon.dcfd05be.svg",
+    "static/media/logoIcon.a2e1d16d.svg": "/movie_database/static/media/logoIcon.a2e1d16d.svg",
+    "static/media/noMoviePosterIcon.f1694c30.svg": "/movie_database/static/media/noMoviePosterIcon.f1694c30.svg",
+    "static/media/noPersonPosterIcon.24d1dcd2.svg": "/movie_database/static/media/noPersonPosterIcon.24d1dcd2.svg",
+    "static/media/noResults.898698f2.svg": "/movie_database/static/media/noResults.898698f2.svg",
+    "static/media/searchIcon.d3391f95.svg": "/movie_database/static/media/searchIcon.d3391f95.svg",
+    "static/media/star.649a9aa3.svg": "/movie_database/static/media/star.649a9aa3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2b0feb3b.js",
+    "static/js/2.97d17146.chunk.js",
+    "static/js/main.d6878419.chunk.js"
+  ]
+}
