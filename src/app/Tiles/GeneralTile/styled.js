@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 export const TileWrapper = styled.article`
   padding: 16px;
@@ -11,28 +11,30 @@ export const TileWrapper = styled.article`
   grid-template-rows: auto 1fr;
   grid-gap: 16px;
   transition: 300ms;
-  
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-      grid-template-columns: 114px 1fr;
-      grid-template-areas: "picture meta";      
-      grid-template-rows: auto;
-    }
-    
-    ${({ people }) => people && css`
-      @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    grid-template-columns: 114px 1fr;
+    grid-template-areas: "picture meta";
+    grid-template-rows: auto;
+  }
+
+  ${({ people }) =>
+    people &&
+    css`
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         padding: 8px;
         grid-template-columns: 1fr;
         grid-template-areas: "picture" "meta";
         grid-template-rows: auto 1fr;
         grid-gap: 8px;
       }
-  `}
-    
-    &:hover{
-      transform: scale(1.02);
-      cursor: pointer;
-    }
-`
+    `}
+
+  &:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+`;
 
 export const InsideMeta = styled.div`
   display: grid;
@@ -47,15 +49,17 @@ export const Title = styled.h2`
   line-height: ${({ theme }) => theme.lineHeight.titleLine};
   color: ${({ theme }) => theme.colors.black};
   overflow-wrap: anywhere;
-  
-  @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-      font-size: ${({ theme }) => theme.fontSize.standard};
-    }
-    
-  ${({ people }) => people && css`
-     text-align: center;
-  `}
-`
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.fontSize.standard};
+  }
+
+  ${({ people }) =>
+    people &&
+    css`
+      text-align: center;
+    `}
+`;
 
 export const Caption = styled.h3`
   margin: 0;
@@ -64,9 +68,15 @@ export const Caption = styled.h3`
   font-weight: 400;
   font-style: normal;
   line-height: ${({ theme }) => theme.lineHeight.standard};
-  
-   @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
-      font-size: ${({ theme }) => theme.fontSize.mobileStandard};
-      margin: 4px 0 0;
-    }
-`
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    font-size: ${({ theme }) => theme.fontSize.mobileStandard};
+    margin: 4px 0 0;
+  }
+
+  ${({ people }) =>
+    people &&
+    css`
+      text-align: center;
+    `}
+`;

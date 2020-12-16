@@ -1,14 +1,24 @@
 import React from "react";
-import { AverageVotes, For, Star, Votes, VoteWrapper } from "./styled";
+import { AverageVotes, For, Star, Votes, VoteWrapper, Wrapper } from "./styled";
 
-export const Vote = ({ averageVotes, votes, detail }) => (
-  <VoteWrapper>
+export const Vote = ({ averageVotes, votes, detail, backdrop }) => (
+  <VoteWrapper backdrop={backdrop}>
     {!!votes ? (
       <>
-        <Star />
-        <AverageVotes detail={detail}>{averageVotes}</AverageVotes>
-        {detail && <For detail={detail}>/10</For>}
-        <Votes detail={detail}>{`${votes} votes`}</Votes>
+        <Wrapper>
+          <Star backdrop={backdrop} />
+          <AverageVotes backdrop={backdrop} detail={detail}>
+            {averageVotes}
+          </AverageVotes>
+          {(detail || backdrop) && (
+            <For backdrop={backdrop} detail={detail}>
+              /10
+            </For>
+          )}
+        </Wrapper>
+        <Votes backdrop={backdrop} detail={detail}>{`${votes} ${
+          votes === 1 ? "vote" : "votes"
+        }`}</Votes>
       </>
     ) : (
       <Votes>No votes yet</Votes>

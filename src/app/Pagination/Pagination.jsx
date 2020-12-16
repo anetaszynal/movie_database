@@ -17,15 +17,15 @@ export const Pagination = ({ page, totalPages }) => {
   return (
     <Wrapper>
       <ChangePageButton onClick={() => goToPage(1)} disabled={isFirstPage}>
-        <Arrow disabled={isFirstPage} back={true} />
-        <Arrow disabled={isFirstPage} hidden back={true} />
+        <Arrow disabled={isFirstPage} back />
+        <Arrow disabled={isFirstPage} hidden back />
         <ButtonTitle>First</ButtonTitle>
       </ChangePageButton>
       <ChangePageButton
         onClick={() => goToPage(page - 1)}
         disabled={isFirstPage}
       >
-        <Arrow disabled={isFirstPage} back={true} />
+        <Arrow disabled={isFirstPage} back />
         <ButtonTitle>Previous</ButtonTitle>
       </ChangePageButton>
       <Text>

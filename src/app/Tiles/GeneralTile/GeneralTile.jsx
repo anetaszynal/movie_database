@@ -5,7 +5,8 @@ import { Vote } from "../Vote";
 import { GenresList } from "../GenresList";
 
 export const GeneralTile = ({
-  url,
+  image,
+  imagePlaceholder,
   title,
   genres,
   caption,
@@ -14,11 +15,11 @@ export const GeneralTile = ({
   votes,
 }) => (
   <TileWrapper people={people}>
-    <Image url={url} />
+    <Image url={image || imagePlaceholder} noImage={!image} />
     <Meta people={people}>
       <InsideMeta>
         <Title people={people}>{title}</Title>
-        {!!caption && <Caption>{caption}</Caption>}
+        {!!caption && <Caption people={people}>{caption}</Caption>}
         {genres?.length > 0 && <GenresList genres={genres} />}
       </InsideMeta>
       {!people && <Vote votes={votes} averageVotes={averageVotes} />}

@@ -14,6 +14,22 @@ export const VoteWrapper = styled.p`
     line-height: ${({ theme }) => theme.lineHeight.titleLine};
     align-self: start;
   }
+
+  ${({ backdrop }) =>
+    backdrop &&
+    css`
+      display: grid;
+      grid-template-columns: 1fr;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        display: -webkit-box;
+      }
+    `}
+`;
+
+export const Wrapper = styled.span`
+  display: flex;
+  align-items: center;
 `;
 
 export const Star = styled(StarIcon)`
@@ -26,6 +42,13 @@ export const Star = styled(StarIcon)`
     height: auto;
     margin-right: 8px;
   }
+
+  ${({ backdrop }) =>
+    backdrop &&
+    css`
+      height: 40px;
+      width: auto;
+    `}
 `;
 
 export const AverageVotes = styled.strong`
@@ -44,6 +67,15 @@ export const AverageVotes = styled.strong`
       font-size: ${({ theme }) => theme.fontSize.secondTitle};
       line-height: ${({ theme }) => theme.lineHeight.titleLine};
     `}
+
+  ${({ backdrop }) =>
+    backdrop &&
+    css`
+      font-weight: 500;
+      font-size: ${({ theme }) => theme.fontSize.backdropVote};
+      line-height: ${({ theme }) => theme.lineHeight.titleLine};
+      color: ${({ theme }) => theme.colors.white};
+    `}
 `;
 
 export const For = styled.span`
@@ -58,6 +90,21 @@ export const For = styled.span`
 
       @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         display: none;
+      }
+    `}
+
+  ${({ backdrop }) =>
+    backdrop &&
+    css`
+      margin-left: 7px;
+      align-self: flex-end;
+      font-weight: 400;
+      font-size: ${({ theme }) => theme.fontSize.standard};
+      color: ${({ theme }) => theme.colors.white};
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        margin-left: 2px;
+        font-size: ${({ theme }) => theme.fontSize.mobileSmall};
       }
     `}
 `;
@@ -80,5 +127,22 @@ export const Votes = styled.span`
       font-size: ${({ theme }) => theme.fontSize.small};
       line-height: ${({ theme }) => theme.lineHeight.small};
       color: ${({ theme }) => theme.colors.black};
+    `}
+
+  ${({ backdrop }) =>
+    backdrop &&
+    css`
+      margin: 17px 0 0;
+      align-self: flex-end;
+      font-weight: 400;
+      font-size: ${({ theme }) => theme.fontSize.standard};
+      line-height: ${({ theme }) => theme.lineHeight.small};
+      color: ${({ theme }) => theme.colors.white};
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        margin-left: 8px;
+        align-self: flex-end;
+        font-size: ${({ theme }) => theme.fontSize.mobileSmall};
+      }
     `}
 `;
