@@ -1,13 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
-import createSagaMiddleware from "redux-saga";
-import saga from "./saga";
-import genresReducer from "./app/genre/genreSlice";
-import topRatedMoviesReducer from "./app/Movies/topRatedMoviesSlice";
-import peopleReducer from "./app/People/peopleSlice";
-import movieDetailsReducer from "./app/MovieDetails/movieDetailsSlice";
-import personDetailsReducer from "./app/PersonDetails/personDetailsSlice";
+import { configureStore } from '@reduxjs/toolkit'
+import createSagaMiddleware from 'redux-saga'
+import saga from './saga'
+import genresReducer from './common/genre/genreSlice'
+import topRatedMoviesReducer from './features/Movies/topRatedMoviesSlice'
+import peopleReducer from './features/People/peopleSlice'
+import movieDetailsReducer from './features/MovieDetails/movieDetailsSlice'
+import personDetailsReducer from './features/PersonDetails/personDetailsSlice'
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware()
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +18,6 @@ export const store = configureStore({
     personDetails: personDetailsReducer,
   },
   middleware: [sagaMiddleware],
-});
+})
 
-sagaMiddleware.run(saga);
+sagaMiddleware.run(saga)
