@@ -7,7 +7,7 @@ import { DetailsPage } from '../../common/DetailsPage'
 import { DetailTile } from '../../common/Tiles/DetailTile'
 import { MoviesSection } from './MoviesSection'
 import { getFullDate } from '../../lib/utils'
-import { getImage } from '../../common/Tiles/getImage'
+import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noPersonPosterIcon from '../images/noPersonPosterIcon.svg'
 
 export const PersonDetailsPage = () => {
@@ -29,7 +29,7 @@ export const PersonDetailsPage = () => {
     <DetailsPage status = {status}>
       {person && <DetailTile people
                   detail
-                  image = {getImage({ path: person.profile_path, size: 'medium' })}
+                  image = {getImage({ path: person.profile_path, size: IMAGE_SIZES.medium })}
                   imagePlaceholder = {noPersonPosterIcon}
                   title = {person.name}
                   firstInfoName = "Date of birth:"
