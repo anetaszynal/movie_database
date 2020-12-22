@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { selectGenres } from '../../../common/genre/genreSlice'
 import { GeneralTile } from '../../../common/Tiles/GeneralTile'
 import { getYear, LOCAL_ROUTES } from '../../../lib/utils'
-import { getImage } from '../../../common/Tiles/getImage'
+import { getImage, IMAGE_SIZES } from '../../../common/Tiles/getImage'
 import noMoviePosterIcon from '../../images/noMoviePosterIcon.svg'
 import { StyledNavLink, Title } from '../../../common/commonStyles'
 import { TileList } from '../../../common/tilesContainer'
@@ -20,7 +20,7 @@ export const MoviesSection = ({ credits, title, role }) => {
         {credits?.map((movie) => (
           <StyledNavLink key = {`${movie[role]}-${movie.id}`}
                          to = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}>
-            <GeneralTile image = {getImage({ path: movie.poster_path, size: 'medium' })}
+            <GeneralTile image = {getImage({ path: movie.poster_path, size: IMAGE_SIZES.medium })}
                          imagePlaceholder = {noMoviePosterIcon}
                          genres = {movie.genre_ids?.map((id) => genres[id])}
                          title = {movie.title}

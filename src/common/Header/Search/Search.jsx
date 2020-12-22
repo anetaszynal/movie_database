@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useOnSearchInputChange } from './useOnSearchInputChange'
 import { Input } from './styled'
+import { LOCAL_ROUTES } from '../../../lib/utils'
 
 export const Search = () => {
   const location = useLocation()
@@ -10,7 +11,7 @@ export const Search = () => {
   const [searchedValue, setSearchedValue] = useState('')
 
   const onSearchInputChange = useOnSearchInputChange(setSearchedValue)
-  const isSearchForPeople = location.pathname.includes('/people')
+  const isSearchForPeople = location.pathname.includes(LOCAL_ROUTES.people)
 
   useEffect(() => {
     setSearchedValue(queryInUrl)
@@ -18,7 +19,7 @@ export const Search = () => {
 
   return (
     <Input value = {searchedValue} placeholder = {`Search for ${
-      location.pathname.includes('/people') ? 'people' : 'movies'
+      isSearchForPeople ? 'people' : 'movies'
     }...`} onChange = {({ target: { value } }) =>
       onSearchInputChange({ newValue: value, isSearchForPeople })
     }/>

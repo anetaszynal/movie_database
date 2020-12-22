@@ -8,7 +8,7 @@ import { PeopleSection } from './PeopleSection'
 import { DetailTile } from '../../common/Tiles/DetailTile'
 import { Backdrop } from './Backdrop'
 import { getFullDate, getYear } from '../../lib/utils'
-import { getImage } from '../../common/Tiles/getImage'
+import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noMoviePosterIcon from '../images/noMoviePosterIcon.svg'
 
 export const MovieDetails = () => {
@@ -28,14 +28,14 @@ export const MovieDetails = () => {
   return (
     <>
       {details && details.backdrop_path && (
-        <Backdrop image = {getImage({ path: details.backdrop_path, size: 'big' })}
+        <Backdrop image = {getImage({ path: details.backdrop_path, size: IMAGE_SIZES.big })}
                   title = {details.title}
                   votes = {details.vote_count}
                   averageVotes = {details.vote_average}/>
       )}
       <DetailsPage status = {status}>
         {details && <DetailTile detail
-                    image = {getImage({ path: details.poster_path, size: 'medium' })}
+                    image = {getImage({ path: details.poster_path, size: IMAGE_SIZES.medium })}
                     imagePlaceholder = {noMoviePosterIcon}
                     title = {details.title}
                     caption = {getYear(details.release_date)}

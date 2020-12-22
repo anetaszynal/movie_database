@@ -6,7 +6,7 @@ import { actions, selectors } from './peopleSlice'
 import { ListPage } from '../../common/ListPage'
 import { GeneralTile } from '../../common/Tiles/GeneralTile'
 import { LOCAL_ROUTES } from '../../lib/utils'
-import { getImage } from '../../common/Tiles/getImage'
+import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noPersonPosterIcon from '../images/noPersonPosterIcon.svg'
 import { StyledNavLink } from '../../common/commonStyles'
 
@@ -40,7 +40,7 @@ export const PeoplePage = () => {
               totalPages = {pagination?.totalPages}>
       {people?.map((person) => (
         <StyledNavLink key = {person.id} to = {`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(person.id)}`}>
-          <GeneralTile image = {getImage({ path: person.profile_path, size: 'medium' })}
+          <GeneralTile image = {getImage({ path: person.profile_path, size: IMAGE_SIZES.medium })}
                        imagePlaceholder = {noPersonPosterIcon}
                        title = {person.name}
                        people/>

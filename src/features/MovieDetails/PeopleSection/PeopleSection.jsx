@@ -1,7 +1,7 @@
 import React from 'react'
 import { GeneralTile } from '../../../common/Tiles/GeneralTile'
 import { LOCAL_ROUTES } from '../../../lib/utils'
-import { getImage } from '../../../common/Tiles/getImage'
+import { getImage, IMAGE_SIZES } from '../../../common/Tiles/getImage'
 import noPersonPosterIcon from '../../images/noPersonPosterIcon.svg'
 import { TileList } from '../../../common/tilesContainer'
 import { Title, StyledNavLink } from '../../../common/commonStyles'
@@ -14,7 +14,7 @@ export const PeopleSection = ({ credits, title, role }) => (
         {credits.map((person) => (
           <StyledNavLink key = {`${person[role]}}-${person.credit_id}`}
                          to = {`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(person.id)}`}>
-            <GeneralTile image = {getImage({ path: person.profile_path, size: 'medium', })}
+            <GeneralTile image = {getImage({ path: person.profile_path, size: IMAGE_SIZES.medium, })}
                          imagePlaceholder = {noPersonPosterIcon}
                          title = {person.name}
                          caption = {person[role]}

@@ -7,7 +7,7 @@ import { selectGenres } from '../../common/genre/genreSlice'
 import { GeneralTile } from '../../common/Tiles/GeneralTile'
 import { ListPage } from '../../common/ListPage'
 import { getYear, LOCAL_ROUTES } from '../../lib/utils'
-import { getImage } from '../../common/Tiles/getImage'
+import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noMoviePosterIcon from '../images/noMoviePosterIcon.svg'
 import { StyledNavLink } from '../../common/commonStyles'
 
@@ -42,7 +42,7 @@ export const MoviesPage = () => {
               totalPages = {pagination?.totalPages}>
       {movies?.map((movie) => (
         <StyledNavLink key = {movie.id} to = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}>
-          <GeneralTile image = {getImage({ path: movie.poster_path, size: 'medium' })}
+          <GeneralTile image = {getImage({ path: movie.poster_path, size: IMAGE_SIZES.medium })}
                        imagePlaceholder = {noMoviePosterIcon}
                        genres = {movie?.genre_ids.map((id) => genres[id])}
                        title = {movie.title}

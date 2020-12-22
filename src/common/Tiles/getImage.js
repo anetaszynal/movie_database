@@ -1,9 +1,15 @@
 import { APP_ROUTES } from '../../lib/utils'
 
-export const sizes = {
+export const IMAGE_SIZES = {
   medium: 'w342',
   big: 'w1280',
 }
 
-export const getImage = ({ path, size }) =>
-  path && `${APP_ROUTES.image}${sizes[size]}${path}`
+const DEFAULT_IMAGE_SIZE = IMAGE_SIZES.medium
+
+export const getImage = ({ path, size }) => {
+  const availableSizesValues = Object.values(IMAGE_SIZES)
+  const chosenSize = availableSizesValues.includes(size) ? size : DEFAULT_IMAGE_SIZE
+
+  return path && `${APP_ROUTES.image}${chosenSize}${path}`
+}
