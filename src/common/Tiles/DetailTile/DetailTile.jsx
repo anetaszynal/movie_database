@@ -3,6 +3,7 @@ import { GenresList } from '../GenresList'
 import { Vote } from '../Vote'
 import { AdditionalInfo, Caption, Description, DetailTileWrapper, Name, Title, } from './styled'
 import { Image, Meta } from '../BothTileStyle'
+import { DisplayDescription } from './displayDescription'
 
 export const DetailTile = ({
   image,
@@ -32,6 +33,6 @@ export const DetailTile = ({
       {genres?.length > 0 && <GenresList genres = {genres}/>}
       {!people && <Vote averageVotes = {averageVotes} votes = {votes} detail = {detail}/>}
     </Meta>
-    <Description>{description}</Description>
+    <Description><DisplayDescription text={description}/></Description>
   </DetailTileWrapper>
 )
