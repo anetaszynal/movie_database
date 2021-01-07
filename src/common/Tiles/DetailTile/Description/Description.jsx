@@ -1,20 +1,21 @@
 import React, { useMemo, useState } from 'react'
+import {ButtonTextVisibility} from './styled'
 
-export const DisplayDescription = ({ text }) => {
+export const Description = ({ text }) => {
   const isTextLongOne = useMemo(() => text?.length > 700, [text])
   const [cutText, setCutText] = useState(isTextLongOne)
 
   const renderTruncatedText = () => (
     <>
       {text.split(' ').slice(0, 100).join(' ')}
-      <button onClick = {() => setCutText(false)}>{'...read more'}</button>
+      <ButtonTextVisibility onClick = {() => setCutText(false)}>{'...read more'}</ButtonTextVisibility>
       </>
   )
 
   const renderFullText = () => (
     <>
       {text}
-      {isTextLongOne && <button onClick = {() => setCutText(true)}>{'read less'}</button>}
+      {isTextLongOne && <ButtonTextVisibility onClick = {() => setCutText(true)}>{'read less'}</ButtonTextVisibility>}
     </>
   )
 

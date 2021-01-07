@@ -74,7 +74,7 @@ export const Name = styled.span`
   }
 `
 
-export const Description = styled.p`
+export const DescriptionText = styled.p`
   font-size: ${({ theme }) => theme.fontSize.description};
   line-height: ${({ theme }) => theme.lineHeight.description};
   margin: -16px 0 0;

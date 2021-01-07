@@ -1,9 +1,9 @@
 import React from 'react'
 import { GenresList } from '../GenresList'
 import { Vote } from '../Vote'
-import { AdditionalInfo, Caption, Description, DetailTileWrapper, Name, Title, } from './styled'
+import { AdditionalInfo, Caption, DescriptionText, DetailTileWrapper, Name, Title, } from './styled'
 import { Image, Meta } from '../BothTileStyle'
-import { DisplayDescription } from './displayDescription'
+import { Description } from './Description/Description'
 
 export const DetailTile = ({
   image,
@@ -33,6 +33,6 @@ export const DetailTile = ({
       {genres?.length > 0 && <GenresList genres = {genres}/>}
       {!people && <Vote averageVotes = {averageVotes} votes = {votes} detail = {detail}/>}
     </Meta>
-    <Description><DisplayDescription text={description}/></Description>
+    <DescriptionText><Description text={description}/></DescriptionText>
   </DetailTileWrapper>
 )
