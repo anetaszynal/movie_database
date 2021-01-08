@@ -17,7 +17,7 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: start;

@@ -12,7 +12,7 @@ export const Title = styled.h1`
   line-height: 1.2;
   margin: 56px 0 24px;
   
-  @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media(max-width: ${({ theme }) => theme.breakpoint.tablets}) {
       font-size: 18px;
        margin: 24px 0 12px;
     }

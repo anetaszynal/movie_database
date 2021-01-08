@@ -12,7 +12,7 @@ export const DetailTileWrapper = styled.article`
   grid-template-rows: auto 1fr;
   grid-gap: 40px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     margin: 16px auto 21px;
     padding: 16px;
     grid-template-areas: "picture meta" "description description";
@@ -26,7 +26,7 @@ export const Title = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.title};
   line-height: ${({ theme }) => theme.lineHeight.small};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     margin-bottom: -4px;
     font-weight: 500;
     font-size: ${({ theme }) => theme.fontSize.standard};
@@ -41,7 +41,7 @@ export const Caption = styled.h3`
   margin: 0;
   color: ${({ theme }) => theme.colors.black};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-size: ${({ theme }) => theme.fontSize.mobileStandard};
     line-height: ${({ theme }) => theme.lineHeight.titleLine};
     color: ${({ theme }) => theme.colors.darkerGrey};
@@ -53,7 +53,7 @@ export const AdditionalInfo = styled.p`
   line-height: ${({ theme }) => theme.lineHeight.small};
   margin: 0 0 8px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-size: ${({ theme }) => theme.fontSize.mobileAdditionalInfo};
     line-height: ${({ theme }) => theme.lineHeight.titleLine};
   }
@@ -69,7 +69,7 @@ export const Name = styled.span`
   color: ${({ theme }) => theme.colors.additionalInfo};
   margin-right: 10px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     display: none;
   }
 `
@@ -81,7 +81,7 @@ export const DescriptionText = styled.p`
   grid-area: description;
   overflow-wrap: anywhere;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-size: ${({ theme }) => theme.fontSize.small};
     margin: 0;
   }

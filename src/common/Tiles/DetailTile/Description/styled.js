@@ -12,7 +12,7 @@ export const ButtonTextVisibility = styled.button`
     cursor: pointer;
   }
   
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-size: ${({ theme }) => theme.fontSize.small};
     margin: 0;
   }

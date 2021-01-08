@@ -5,6 +5,7 @@ import App from './App'
 import { store } from './store'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
+import { BreakpointsProvider } from './common/Tiles/DetailTile/Description/useBreakpoints'
 import { theme } from './theme'
 import * as serviceWorker from './serviceWorker'
 import { GlobalStyle } from './GlobalStyle'
@@ -13,8 +14,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store = {store}>
       <ThemeProvider theme = {theme}>
-        <GlobalStyle/>
-        <App/>
+        <BreakpointsProvider>
+          <GlobalStyle/>
+          <App/>
+        </BreakpointsProvider>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,
