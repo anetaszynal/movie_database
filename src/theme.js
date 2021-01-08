@@ -40,6 +40,13 @@ export const theme = {
 
   breakpoint: {
     headerBreak: '1050px',
-    mobile: '787px',
+    desktops: '1200px',
+    laptops:'1024px',
+    smallLaptops: '890px',
+    tablets: '787px',
+    smallTablets: '630px',
+    mobile: '480px',
+    iPhone: '375px',
+    smallMobile: '320px'
   },
 }

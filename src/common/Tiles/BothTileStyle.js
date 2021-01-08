@@ -31,7 +31,7 @@ export const Meta = styled.div`
       grid-gap: 24px;
       grid-template-rows: auto;
 
-      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         grid-gap: 8px;
       }
     `}

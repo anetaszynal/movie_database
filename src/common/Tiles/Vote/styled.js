@@ -9,7 +9,7 @@ export const VoteWrapper = styled.p`
   font-size: ${({ theme }) => theme.fontSize.standard};
   line-height: ${({ theme }) => theme.lineHeight.standard};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-size: ${({ theme }) => theme.fontSize.mobileStandard};
     line-height: ${({ theme }) => theme.lineHeight.titleLine};
     align-self: start;
@@ -21,7 +21,7 @@ export const VoteWrapper = styled.p`
       display: grid;
       grid-template-columns: 1fr;
 
-      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         display: -webkit-box;
       }
     `}
@@ -37,7 +37,7 @@ export const Star = styled(StarIcon)`
   width: auto;
   margin-right: 12px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     width: 16px;
     height: auto;
     margin-right: 8px;
@@ -54,7 +54,7 @@ export const Star = styled(StarIcon)`
 export const AverageVotes = styled.strong`
   font-weight: 600;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-weight: 600;
     font-size: ${({ theme }) => theme.fontSize.mobileStandard};
     line-height: ${({ theme }) => theme.lineHeight.titleLine};
@@ -88,7 +88,7 @@ export const For = styled.span`
       line-height: ${({ theme }) => theme.lineHeight.small};
       margin-left: 8px;
 
-      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         display: none;
       }
     `}
@@ -102,7 +102,7 @@ export const For = styled.span`
       font-size: ${({ theme }) => theme.fontSize.standard};
       color: ${({ theme }) => theme.colors.white};
 
-      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         margin-left: 2px;
         font-size: ${({ theme }) => theme.fontSize.mobileSmall};
       }
@@ -113,7 +113,7 @@ export const Votes = styled.span`
   color: ${({ theme }) => theme.colors.darkerGrey};
   margin-left: 12px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     color: ${({ theme }) => theme.colors.darkerGrey};
     margin-left: 7px;
     font-size: ${({ theme }) => theme.fontSize.mobileStandard};
@@ -139,7 +139,7 @@ export const Votes = styled.span`
       line-height: ${({ theme }) => theme.lineHeight.small};
       color: ${({ theme }) => theme.colors.white};
 
-      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         margin-left: 8px;
         align-self: flex-end;
         font-size: ${({ theme }) => theme.fontSize.mobileSmall};

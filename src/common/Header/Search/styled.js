@@ -13,7 +13,7 @@ export const Input = styled.input`
   line-height: 1.5;
   transition: 300ms;
   
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     width: 100%;
     height: 44px;
     font-size: 14px;

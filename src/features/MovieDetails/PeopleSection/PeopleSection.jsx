@@ -5,6 +5,7 @@ import { getImage, IMAGE_SIZES } from '../../../common/Tiles/getImage'
 import noPersonPosterIcon from '../../images/noPersonPosterIcon.svg'
 import { TileList } from '../../../common/tilesContainer'
 import { Title, StyledNavLink } from '../../../common/commonStyles'
+import { GallerySlider } from './GallerySlider'
 
 export const PeopleSection = ({ credits, title, role }) => (
   credits?.length > 0 && (
@@ -21,6 +22,7 @@ export const PeopleSection = ({ credits, title, role }) => (
                          people/>
           </StyledNavLink>
         ))}
+        <GallerySlider photos={credits}/>
       </TileList>
     </>
   )
