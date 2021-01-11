@@ -5,18 +5,14 @@ import { GeneralTile } from '../../../common/Tiles/GeneralTile'
 import { getYear, LOCAL_ROUTES } from '../../../lib/utils'
 import { getImage, IMAGE_SIZES } from '../../../common/Tiles/getImage'
 import noMoviePosterIcon from '../../images/noMoviePosterIcon.svg'
-import { StyledNavLink, Title } from '../../../common/commonStyles'
-import { TileList } from '../../../common/tilesContainer'
+import { StyledNavLink } from '../../../common/commonStyles'
+import { DetailsSection } from '../../../common/DetailsSection'
 
-export const MoviesSection = ({ credits, title, role }) => {
+export const MoviesSection = ({ credits, title, role, tilesNumber }) => {
   const genres = useSelector(selectGenres)
-  const creditsLength = credits?.length
 
   return (
-    creditsLength > 0 &&
-    <>
-      <Title>{`Movies - ${title} (${creditsLength}) `}</Title>
-      <TileList>
+    <DetailsSection credits={credits} title={title} tilesNumber={tilesNumber}>
         {credits?.map((movie) => (
           <StyledNavLink key = {`${movie[role]}-${movie.id}`}
                          to = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}>
@@ -29,7 +25,6 @@ export const MoviesSection = ({ credits, title, role }) => {
                          votes = {movie.vote_count}/>
           </StyledNavLink>
         ))}
-      </TileList>
-    </>
+      </DetailsSection>
   )
 }

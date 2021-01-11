@@ -27,7 +27,7 @@ export const DetailTile = ({
       <Title>{title}</Title>
       {caption && <Caption>{caption}</Caption>}
       <div>
-        {firstInfo && <AdditionalInfo> <Name>{firstInfoName}</Name> {firstInfo}</AdditionalInfo>}
+        {firstInfo && <AdditionalInfo> <Name>{firstInfoName}</Name> {`${firstInfo}`} </AdditionalInfo>}
         {secondInfo && <AdditionalInfo last = {true}> <Name>{secondInfoName}</Name>{secondInfo}</AdditionalInfo>}
       </div>
       {genres?.length > 0 && <GenresList genres = {genres}/>}
