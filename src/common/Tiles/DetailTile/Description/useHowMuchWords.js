@@ -1,4 +1,4 @@
-import { useBreakpoints } from './useBreakpoints'
+import { useBreakpoints } from '../../../useBreakpoints'
 
 export const useHowMuchWords = () => {
   const { smallMobile, iPhone, mobile, smallTablets, tablets, smallLaptops, laptops, desktops } = useBreakpoints()
