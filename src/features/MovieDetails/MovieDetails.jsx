@@ -10,6 +10,7 @@ import { Backdrop } from './Backdrop'
 import { getFullDate, getYear } from '../../lib/utils'
 import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noMoviePosterIcon from '../images/noMoviePosterIcon.svg'
+import { useHowMuchPersonTiles } from './useHowMuchPersonTiles'
 
 export const MovieDetails = () => {
   const details = useSelector(selectors.selectDetails)
@@ -18,6 +19,7 @@ export const MovieDetails = () => {
   const status = useSelector(selectors.selectStatus)
   const dispatch = useDispatch()
   const { id } = useParams()
+  const tilesNumber = useHowMuchPersonTiles()
 
   useEffect(() => {
     dispatch(actions.fetch(id))
@@ -41,14 +43,14 @@ export const MovieDetails = () => {
                     caption = {getYear(details.release_date)}
                     firstInfoName = "Production:"
                     secondInfoName = "Release date:"
-                    firstInfo = {details.production_countries?.map(({ name }) => name)}
+                    firstInfo = {details.production_countries?.map(({ name }) => ` ${name}`)}
                     secondInfo = {getFullDate(details.release_date)}
                     genres = {details.genres?.map(({ name }) => name)}
                     votes = {details.vote_count}
                     averageVotes = {details.vote_average}
                     description = {details.overview}/>}
-        <PeopleSection credits = {cast} title = {'Cast'} role = {'character'}/>
-        <PeopleSection credits = {crew} title = {'Crew'} role = {'job'}/>
+        <PeopleSection credits = {cast} title = {'Cast'} role = {'character'} tilesNumber={tilesNumber}/>
+        <PeopleSection credits = {crew} title = {'Crew'} role = {'job'} tilesNumber={tilesNumber}/>
       </DetailsPage>
     </>
   )
