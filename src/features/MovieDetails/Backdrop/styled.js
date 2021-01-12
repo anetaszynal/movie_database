@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     padding: 0 16px 8px;
   }
 `
@@ -30,7 +30,7 @@ export const Title = styled.h1`
   line-height: ${({ theme }) => theme.lineHeight.small};
   color: ${({ theme }) => theme.colors.white};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     margin: 0 0 5px;
     font-size: ${({ theme }) => theme.fontSize.mobileBackdrop};
   }

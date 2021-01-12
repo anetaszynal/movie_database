@@ -13,7 +13,7 @@ export const Loader = styled(LoaderIcon)`
   display: block;
   height: auto;
   
-  @media(max-width: ${({ theme }) => theme.breakpoint.mobile}){
+  @media(max-width: ${({ theme }) => theme.breakpoint.tablets}){
     margin-top: 24px;
     width: 35px;
   }

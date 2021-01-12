@@ -12,7 +12,7 @@ export const TileWrapper = styled.article`
   grid-gap: 16px;
   transition: 300ms;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     grid-template-columns: 114px 1fr;
     grid-template-areas: "picture meta";
     grid-template-rows: auto;
@@ -21,7 +21,7 @@ export const TileWrapper = styled.article`
   ${({ people }) =>
   people &&
   css`
-      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+      @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         padding: 8px;
         grid-template-columns: 1fr;
         grid-template-areas: "picture" "meta";
@@ -50,7 +50,7 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.black};
   overflow-wrap: anywhere;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-size: ${({ theme }) => theme.fontSize.standard};
   }
 
@@ -69,7 +69,7 @@ export const Caption = styled.h3`
   font-style: normal;
   line-height: ${({ theme }) => theme.lineHeight.standard};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-size: ${({ theme }) => theme.fontSize.mobileStandard};
     margin: 4px 0 0;
   }

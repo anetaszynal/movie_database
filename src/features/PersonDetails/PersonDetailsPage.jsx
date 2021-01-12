@@ -9,6 +9,7 @@ import { MoviesSection } from './MoviesSection'
 import { getFullDate } from '../../lib/utils'
 import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noPersonPosterIcon from '../images/noPersonPosterIcon.svg'
+import { useHowMuchMovieTiles } from './useHowMuchMovieTiles'
 
 export const PersonDetailsPage = () => {
   const dispatch = useDispatch()
@@ -16,6 +17,7 @@ export const PersonDetailsPage = () => {
   const cast = useSelector(selectors.selectCast)
   const crew = useSelector(selectors.selectCrew)
   const status = useSelector(selectors.selectStatus)
+  const tilesNumber = useHowMuchMovieTiles()
 
   const { id } = useParams()
 
@@ -37,8 +39,9 @@ export const PersonDetailsPage = () => {
                   firstInfo = {getFullDate(person.birthday)}
                   secondInfo = {person.place_of_birth}
                   description = {person.biography}/>}
-      <MoviesSection title = {'cast'} credits = {cast} role = {'character'}/>
-      <MoviesSection title = {'crew'} credits = {crew} role = {'job'}/>
+      <MoviesSection title = {`Movies - cast (${cast?.length}) `} credits = {cast} role = {'character'} tilesNumber={tilesNumber}/>
+      <MoviesSection title = {`Movies - crew (${crew?.length}) `} credits = {crew} role = {'job'} tilesNumber={tilesNumber}/>
     </DetailsPage>
   )
 }
+

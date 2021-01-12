@@ -8,7 +8,7 @@ export const Wrapper = styled.footer`
     align-items: center;
     justify-content: center;
 
-   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+   @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
        height: 24px;
        margin: 32px auto 31px;
     }
@@ -39,7 +39,7 @@ export const ChangePageButton = styled.button`
           cursor: not-allowed;
          }
     }
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         margin-right: 8px;
         padding: 8px 12px;
     }
@@ -55,7 +55,7 @@ export const Arrow = styled(ArrowIcon)`
         fill: ${({ theme }) => theme.colors.darkerGrey};
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         width: 5px;
         height: 8px;
         margin-left: 0;
@@ -65,14 +65,14 @@ export const Arrow = styled(ArrowIcon)`
         transform: rotate(180deg);
         margin: 0 8px 0 0;
         
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         margin: 0;
     }
     `}
 
     ${({ hidden }) => hidden && css`
         display: none;
-        @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
             display: unset;
             margin-left: 4px;
         }
@@ -83,7 +83,7 @@ export const ButtonTitle = styled.span`
     font-size: 14px;
     line-height: 1.4;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         display: none;
     }
 `
@@ -95,7 +95,7 @@ export const Text = styled.span`
     color: ${({ theme }) => theme.colors.darkerGrey};
     align-self: center;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         margin: 0 8px;
         font-size: 10px;
         line-height: 2.4;
@@ -107,7 +107,7 @@ export const Number = styled.span`
     font-weight: 600;
     color: ${({ theme }) => theme.colors.black};
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
         margin: 0 2px;
         font-size: 10px;
         line-height: 2.4;

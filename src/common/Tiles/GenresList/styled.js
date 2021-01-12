@@ -20,7 +20,7 @@ export const ListItem = styled.li`
    font-size: ${({ theme }) => theme.fontSize.small};
    line-height: ${({ theme }) => theme.lineHeight.listLine};
    
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoint.tablets}) {
       font-size: ${({ theme }) => theme.fontSize.mobileSmall};
       line-height: ${({ theme }) => theme.lineHeight.mobile};
       padding: 4px 8px;
