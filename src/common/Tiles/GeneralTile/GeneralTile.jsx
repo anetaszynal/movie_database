@@ -19,7 +19,7 @@ export const GeneralTile = ({
     <Meta people = {people}>
       <InsideMeta>
         <Title people = {people}>{title}</Title>
-        {!!caption && <Caption people = {people}>{caption}</Caption>}
+        {!!caption && typeof caption === 'string' ? <Caption people = {people}>{caption}</Caption> : caption?.map((role, index) => <Caption key={index} people = {people}>{role}</Caption>)}
         {genres?.length > 0 && <GenresList genres = {genres}/>}
       </InsideMeta>
       {!people && <Vote votes = {votes} averageVotes = {averageVotes}/>}

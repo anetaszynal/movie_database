@@ -68,6 +68,7 @@ export const Caption = styled.h3`
   font-weight: 400;
   font-style: normal;
   line-height: ${({ theme }) => theme.lineHeight.standard};
+  overflow-wrap: break-word;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
     font-size: ${({ theme }) => theme.fontSize.mobileStandard};
