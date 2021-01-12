@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 export const Slider = styled.div`
   margin-right: -40px;
   display: flex;
-  background-color: #fffbfb47;
+  background-color:${({theme}) => theme.colors.sliderGrey};
   height: inherit;
   width: 40px;
   z-index: 1;

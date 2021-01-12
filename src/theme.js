@@ -2,6 +2,7 @@ export const theme = {
   colors: {
     white: '#FFFFFF',
     lightGrey: '#F5F5FA',
+    sliderGrey: '#fffbfb47',
     grey: '#E4E6F0',
     loaderCircle: '#DDDDEE',
     imageBackground: '#C4C4C4',

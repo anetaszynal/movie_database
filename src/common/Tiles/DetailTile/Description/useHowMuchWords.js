@@ -3,7 +3,7 @@ import { useBreakpoints } from '../../../useBreakpoints'
 export const useHowMuchWords = () => {
   const { smallMobile, iPhone, mobile, smallTablets, tablets, smallLaptops, laptops, desktops } = useBreakpoints()
 
-  const howMuchWords = () => {
+  const getWordsNumber = () => {
     const screenWidth = window.innerWidth
     const textWidth = (availableSpace, otherElementsWidth, line) =>
       Math.floor((availableSpace - otherElementsWidth) / line)
@@ -28,5 +28,5 @@ export const useHowMuchWords = () => {
       return textWidth(screenWidth, mobileElementsWidth, 12)
     }
   }
-  return howMuchWords()
+  return getWordsNumber()
 }

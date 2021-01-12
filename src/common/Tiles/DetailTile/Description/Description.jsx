@@ -5,7 +5,7 @@ import { ButtonTextVisibility } from './styled'
 export const Description = ({ text }) => {
   const textWord = text.split(' ')
   const howMuchWords = useHowMuchWords()
-  const isTextLongOne = useMemo(() => textWord.length > howMuchWords, [text, howMuchWords])
+  const isTextLongOne = useMemo(() => textWord.length > howMuchWords, [textWord.length, howMuchWords])
   const [cutText, setCutText] = useState(isTextLongOne)
 
   const renderTruncatedText = () => (
