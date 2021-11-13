@@ -1,5 +1,4 @@
-export const convertArrayToObject = (array) => array.reduce(
-  (accumulator, { id, name }) =>
+export const convertArrayToObject = (array) => array.reduce((accumulator, { id, name }) =>
     (
       {
         ...accumulator,
