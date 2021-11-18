@@ -20,7 +20,7 @@ export const Search = () => {
   return (
     <Input value = {searchedValue} placeholder = {`Search for ${
       isSearchForPeople ? 'people' : 'movies'
-    }...`} onChange = {({ target: { value } }) =>
+    }...`} onChange = {({ target: { value } } : {target: {value: string}}) =>
       onSearchInputChange({ newValue: value, isSearchForPeople })
     }/>
   )
