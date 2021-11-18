@@ -1,8 +1,8 @@
-export const getYear = (date) => {
+export const getYear = (date:string) => {
   return date?.split('-')[0]
 }
 
-export const getFullDate = (date) => {
+export const getFullDate = (date:string) => {
   return date?.split('-').reverse().join('.').replace(/"-"/g, '.')
 }
 
@@ -23,12 +23,12 @@ export const APP_ROUTES = {
 export const LOCAL_ROUTES = {
   movies: '/movies',
   people: '/people',
-  details: (id) => `/details/${id}`,
+  details: (id:number) => `/details/${id}`,
 }
 
-export const STATUS = {
-  initial: 'initial',
-  success: 'success',
-  loading: 'loading',
-  error: 'error',
+export enum STATUS {
+  initial = 'initial',
+  success = 'success',
+  loading = 'loading',
+  error = 'error',
 }

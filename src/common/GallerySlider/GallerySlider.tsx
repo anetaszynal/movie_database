@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Arrow, PageWrapper, Slider, Wrapper } from './styled'
 
-export const GallerySlider = ({ photos, creditsPage, slideStart, tilesNumber, showNext, showPrevious, children }) => {
-
+export const GallerySlider:FC<{photos: number, creditsPage: JSX.Element[], slideStart: number, tilesNumber: number, showNext:() => void, showPrevious:() => void}> = ({ photos, creditsPage, slideStart, tilesNumber, showNext, showPrevious, children }) => {
+console.log(creditsPage)
 
   return (
     <>
