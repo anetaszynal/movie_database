@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { GenresList } from '../GenresList'
 import { Vote } from '../Vote'
 import { AdditionalInfo, Caption, DescriptionText, DetailTileWrapper, Name, Title, } from './styled'
 import { Image, Meta } from '../BothTileStyle'
 import { Description } from './Description/Description'
+import { DetailedTile } from '../../types/tile'
 
-export const DetailTile = ({
+export const DetailTile:FC<DetailedTile> = ({
   image,
   imagePlaceholder,
   title,
@@ -30,7 +31,7 @@ export const DetailTile = ({
         {firstInfo && <AdditionalInfo> <Name>{firstInfoName}</Name> {`${firstInfo}`} </AdditionalInfo>}
         {secondInfo && <AdditionalInfo last = {true}> <Name>{secondInfoName}</Name>{secondInfo}</AdditionalInfo>}
       </div>
-      {genres?.length > 0 && <GenresList genres = {genres}/>}
+      {genres && genres?.length > 0 && <GenresList genres = {genres}/>}
       {!people && <Vote averageVotes = {averageVotes} votes = {votes} detail = {detail}/>}
     </Meta>
     <DescriptionText><Description text={description}/></DescriptionText>

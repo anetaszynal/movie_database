@@ -22,7 +22,6 @@ export const ContentWrapper = styled.div`
     grid-template-columns: 1fr;
     justify-items: start;
   }
-  }
   `
 
 const flexGap = 16

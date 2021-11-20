@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const Slider = styled.div`
+export const Slider = styled.div<{back?: boolean, hidden?: boolean}>`
   margin-right: -40px;
   display: flex;
   background-color:${({theme}) => theme.colors.sliderGrey};
@@ -29,7 +29,7 @@ export const Slider = styled.div`
     `}
 `;
 
-export const Arrow = styled(arrowIcon)`
+export const Arrow = styled(arrowIcon)<{back?: boolean}>`
   align-self: center;
   justify-self: center;
   height: 100px;
@@ -49,7 +49,7 @@ export const PageWrapper = styled.div`
   overflow: auto;
 `;
 
-export const Page = styled.div`
+export const Page = styled.div<{active?: boolean}>`
   flex-shrink: 0;
   margin: 8px;
   width: 20px;

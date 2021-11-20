@@ -10,7 +10,6 @@ import { convertArrayToObject } from "./convertArrayToObject";
 function* fetchGenreHandler() {
   try {
     const genres = yield call(getGenres);
-    console.log(genres);
     yield put(fetchGenresSuccess(convertArrayToObject(genres.genres)));
   } catch (error) {
     yield put(fetchGenresError(error));

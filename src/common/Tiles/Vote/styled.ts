@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { ReactComponent as StarIcon } from './star.svg'
 
-export const VoteWrapper = styled.p`
+export const VoteWrapper = styled.p<{backdrop?: boolean}>`
   margin: 0;
   display: flex;
   align-self: end;
@@ -32,7 +32,7 @@ export const Wrapper = styled.span`
   align-items: center;
 `
 
-export const Star = styled(StarIcon)`
+export const Star = styled(StarIcon)<{backdrop?: boolean}>`
   height: 22px;
   width: auto;
   margin-right: 12px;
@@ -51,7 +51,7 @@ export const Star = styled(StarIcon)`
     `}
 `
 
-export const AverageVotes = styled.strong`
+export const AverageVotes = styled.strong<{backdrop?: boolean, detail?: boolean}>`
   font-weight: 600;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablets}) {
@@ -78,7 +78,7 @@ export const AverageVotes = styled.strong`
     `}
 `
 
-export const For = styled.span`
+export const For = styled.span<{backdrop?: boolean, detail?: boolean}>`
   ${({ detail }) =>
   detail &&
   css`
@@ -109,7 +109,7 @@ export const For = styled.span`
     `}
 `
 
-export const Votes = styled.span`
+export const Votes = styled.span<{backdrop?: boolean, detail?: boolean}>`
   color: ${({ theme }) => theme.colors.darkerGrey};
   margin-left: 12px;
 

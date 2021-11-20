@@ -24,7 +24,7 @@ export const AdditionalInfo = styled.h2`
   color: ${({ theme }) => theme.colors.black};
 `
 
-export const StyledNavLink = styled(NavLink).attrs()`
+export const StyledNavLink = styled(NavLink)`
   margin: 0 auto;
   max-width: 190px;
   padding: 16px 24px;

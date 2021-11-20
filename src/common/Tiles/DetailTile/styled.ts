@@ -48,7 +48,7 @@ export const Caption = styled.h3`
   }
 `
 
-export const AdditionalInfo = styled.p`
+export const AdditionalInfo = styled.p<{last?: boolean}>`
   font-size: ${({ theme }) => theme.fontSize.additionalInfo};
   line-height: ${({ theme }) => theme.lineHeight.small};
   margin: 0 0 8px;

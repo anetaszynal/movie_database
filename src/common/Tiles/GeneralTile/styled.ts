@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const TileWrapper = styled.article`
+export const TileWrapper = styled.article<{people?: boolean}>`
   padding: 16px;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -42,7 +42,7 @@ export const InsideMeta = styled.div`
   grid-gap: 8px;
 `
 
-export const Title = styled.h2`
+export const Title = styled.h2<{people?: boolean}>`
   margin: 0;
   font-weight: 500;
   font-size: ${({ theme }) => theme.fontSize.secondTitle};
@@ -61,7 +61,7 @@ export const Title = styled.h2`
     `}
 `
 
-export const Caption = styled.h3`
+export const Caption = styled.h3<{people?: boolean}>`
   margin: 0;
   color: ${({ theme }) => theme.colors.darkerGrey};
   font-size: ${({ theme }) => theme.fontSize.standard};

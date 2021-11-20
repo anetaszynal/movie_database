@@ -1,13 +1,13 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import React, { createContext, FC, useContext, useEffect, useMemo, useState } from 'react'
 import { theme } from '../theme'
 import {additionalBreakpoints} from './additionalBreakpoints'
 
-export const useMediaQueries = (query) => {
+export const useMediaQueries = (query: string) => {
   const mediaQueryList = useMemo(() => window.matchMedia(`(${query})`),[query])
   const [matches, setMatches] = useState(mediaQueryList.matches)
 
   useEffect(() => {
-    const listener = event => setMatches(event.matches)
+    const listener = (event: MediaQueryListEvent) => setMatches(event.matches)
     mediaQueryList.addEventListener('change', listener)
 
     return () => mediaQueryList.removeEventListener('change', listener)
@@ -16,9 +16,29 @@ export const useMediaQueries = (query) => {
   return matches
 }
 
-const BreakpointsContext = createContext(undefined)
+interface Props {
+  smallMobile: boolean,
+  iPhone: boolean,
+  mobile: boolean, 
+  smallTablets: boolean, 
+  tablets: boolean, 
+  smallLaptops: boolean,
+  laptops: boolean,
+  desktops: boolean,
+  personFirstBreakpoint: boolean,
+  personSecondBreakpoint: boolean,
+  personThirdBreakpoint: boolean,
+  personFourthBreakpoint: boolean,
+  personFifthBreakpoint: boolean,
+  personSixthBreakpoint: boolean,
+  movieFirstBreakpoint: boolean,
+  movieSecondBreakpoint: boolean,
+  movieThirdBreakpoint: boolean
+}
+
+const BreakpointsContext = createContext<Props>({} as Props)
 export const useBreakpoints = () => useContext(BreakpointsContext)
-export const BreakpointsProvider = ({ children }) => {
+export const BreakpointsProvider:FC = ({ children }) => {
   const maxWidthString =  'max-width:'
   const smallMobile = useMediaQueries(`${maxWidthString}${theme.breakpoint.smallMobile}`)
   const iPhone = useMediaQueries(`${maxWidthString}${theme.breakpoint.iPhone}`)

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Image = styled.div`
+export const Image = styled.div<{url: string, noImage?: boolean}>`
   padding-top: calc(100% * 434 / 292);
   border-radius: 5px;
   background-image: url(${({ url }) => url});
@@ -17,7 +17,7 @@ export const Image = styled.div`
     `}
 `
 
-export const Meta = styled.div`
+export const Meta = styled.div<{detail?: boolean, people?: boolean}>`
   grid-area: meta;
   display: grid;
   grid-template-columns: 1fr;

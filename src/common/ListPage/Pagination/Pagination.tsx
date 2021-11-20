@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { useGoToPage } from './useGoToPage'
 import { Arrow, ButtonTitle, ChangePageButton, Number, Text, Wrapper, } from './styled'
 
-export const Pagination = ({ page, totalPages }) => {
+export const Pagination:FC<{page: number, totalPages: number}> = ({ page, totalPages }) => {
   const isFirstPage = page === 1
   const isLastPage = page === totalPages
   const goToPage = useGoToPage()

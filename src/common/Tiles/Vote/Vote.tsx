@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { AverageVotes, For, Star, Votes, VoteWrapper, Wrapper } from './styled'
 
-export const Vote = ({ averageVotes, votes, detail, backdrop }) => (
+export const Vote:FC<{averageVotes?: number, votes?: number, detail?: boolean, backdrop?: boolean}> = ({ averageVotes, votes, detail, backdrop }) => (
   <VoteWrapper backdrop = {backdrop}>
     {!!votes ? (
       <>

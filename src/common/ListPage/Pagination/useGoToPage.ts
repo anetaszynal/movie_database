@@ -5,7 +5,7 @@ export const useGoToPage = () => {
   const location = useLocation()
   const history = useHistory()
 
-  return page => {
+  return (page : number) => {
     history.push({
       pathname: location.pathname,
       search: buildQueryString({ page: page === 1 ? undefined : page }, location.search),

@@ -45,7 +45,7 @@ export const ChangePageButton = styled.button`
     }
 `
 
-export const Arrow = styled(ArrowIcon)`
+export const Arrow = styled(ArrowIcon)<{disabled:boolean, back?: boolean, hidden?: boolean}>`
     width: 7px;
     height: 11px;
     margin-left: 8px;

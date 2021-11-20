@@ -5,7 +5,7 @@ export const useHowMuchWords = () => {
 
   const getWordsNumber = () => {
     const screenWidth = window.innerWidth
-    const textWidth = (availableSpace, otherElementsWidth, line) =>
+    const textWidth = (availableSpace: number, otherElementsWidth: number, line: number) =>
       Math.floor((availableSpace - otherElementsWidth) / line)
     const desktopElementsWidth = 16 * 2 + 64 * 3 + 310
     const mobileElementsWidth = 64

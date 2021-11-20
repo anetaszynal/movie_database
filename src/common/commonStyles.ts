@@ -24,7 +24,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => (
   {
     activeClassName,
   }
-))`
+))<{border?: boolean}>`
   color: unset;
   text-decoration: none;
   transition: 300ms;

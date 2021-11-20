@@ -19,7 +19,7 @@ export const PersonDetailsPage = () => {
   const status = useSelector(selectors.selectStatus)
   const tilesNumber = useHowMuchMovieTiles()
 
-  const { id } = useParams()
+  const { id } = useParams<{id:string}>()
 
   useEffect(() => {
     dispatch(actions.fetch(id))
