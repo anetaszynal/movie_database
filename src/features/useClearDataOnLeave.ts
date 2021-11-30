@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 
-export const useClearDataOnLeave = ({ clearAction }) => {
+export const useClearDataOnLeave = ({ clearAction }: {clearAction: () => void}) => {
   const dispatch = useDispatch()
 
   useEffect(() => {

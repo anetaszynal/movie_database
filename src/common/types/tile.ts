@@ -1,11 +1,14 @@
-export interface Tile {
-  image? : string,
+export interface VoteType {
+  averageVotes?: number,
+  votes?: number,
+}
+
+export interface Tile extends VoteType {
+  image : string | null,
   imagePlaceholder: string,
   title: string,
   genres?: string[],
   caption?: string | string[],
-  averageVotes?: number,
-  votes?: number,
   people?: boolean,
 }
 
@@ -16,4 +19,9 @@ export interface DetailedTile extends Tile {
   secondInfo?: string,
   description: string,
   detail?: boolean,
+}
+
+export interface CommonDetailsSection {
+  tilesNumber: number, 
+  title: string, 
 }

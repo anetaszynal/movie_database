@@ -4,12 +4,11 @@ import { Title } from '../commonStyles'
 import { GallerySlider } from '../GallerySlider'
 import { TileList } from '../tilesContainer'
 import { MovieCreditsCast, MovieCreditsCrew, PersonCreditsCast, PersonCreditsCrew } from '../../models/credits.model'
+import { CommonDetailsSection } from '../types/tile'
 
-interface DetailsSectionProp {
-  tilesNumber: number, 
-  credits: MovieCreditsCast[] | MovieCreditsCrew[] | PersonCreditsCast[] | PersonCreditsCrew[], 
-  title: string, 
-  people?: boolean
+interface DetailsSectionProp extends CommonDetailsSection {
+  people?: boolean,
+  credits: MovieCreditsCast[] | MovieCreditsCrew[] | PersonCreditsCast[] | PersonCreditsCrew[]
 }
 
 export const DetailsSection:FC<DetailsSectionProp> = ({tilesNumber, credits, title, people, children}) => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Poster = styled.article`
+export const Poster = styled.article<{url?: string | null}>`
   width: 100%;
   padding-top: calc(65% * 148 / 320);
   background: linear-gradient(to top, transparent 95%, #000000 100%),

@@ -7,7 +7,7 @@ export const IMAGE_SIZES = {
 
 const DEFAULT_IMAGE_SIZE = IMAGE_SIZES.medium;
 
-export const getImage = ({ path, size }: {path?: string, size: string}) => {
+export const getImage = ({ path, size }: {path: string | null, size: string}) => {
   const availableSizesValues = Object.values(IMAGE_SIZES);
   const chosenSize = availableSizesValues.includes(size)
     ? size

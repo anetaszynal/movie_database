@@ -1,9 +1,10 @@
-import { MovieCreditsCrew } from "../../models/credits.model";
+import { MovieCreditsCast, MovieCreditsCrew } from "../../models/credits.model";
 
-type accumulatorType = {name: string,profile_path: string | null, credit_id: string, id: number, job: string[]}
-export const groupPersonRoles = (credits: MovieCreditsCrew[], role:'character' | '') => role === 'character'
-? credits
-: Object.values(credits.reduce((c: MovieCreditsCrew & Record<string, accumulatorType>, { name, job, profile_path, credit_id, id }) => ({
+export type CrewPersonRoles = {name: string,profile_path: string | null, credit_id: string, id: number, job: string[]}
+
+export const groupPersonRoles = (credits: MovieCreditsCrew[] | MovieCreditsCast[], role:'character' | 'job') => role === 'character'
+? credits as MovieCreditsCast[]
+: Object.values((credits as MovieCreditsCrew[]).reduce((c: MovieCreditsCrew & Record<string, CrewPersonRoles>, { name, job, profile_path, credit_id, id }) => ({
     ...c,
     [name]: {
       name,
@@ -17,4 +18,4 @@ export const groupPersonRoles = (credits: MovieCreditsCrew[], role:'character' |
         job
       ]
     }
-  }),{} as any));
+  }),{} as MovieCreditsCrew & Record<string, CrewPersonRoles>));

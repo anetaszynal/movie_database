@@ -10,9 +10,10 @@ import { getYear, LOCAL_ROUTES } from '../../lib/utils'
 import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noMoviePosterIcon from '../images/noMoviePosterIcon.svg'
 import { StyledNavLink } from '../../common/commonStyles'
+import { MoviesBasicInformation } from '../../models/movie.model'
 
 export const MoviesPage = () => {
-  const movies = useSelector(selectors.selectResults)
+  const movies = useSelector(selectors.selectResults) as MoviesBasicInformation[]
   const status = useSelector(selectors.selectStatus)
   const pagination = useSelector(selectors.selectPagination)
   const genres = useSelector(selectGenres)
@@ -41,7 +42,7 @@ export const MoviesPage = () => {
               page = {pagination?.page}
               totalPages = {pagination?.totalPages}>
       {movies?.map((movie) => (
-        <StyledNavLink key = {movie.id} to = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id)}`}>
+        <StyledNavLink key = {movie.id} to = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id.toString())}`}>
           <GeneralTile image = {getImage({ path: movie.poster_path, size: IMAGE_SIZES.medium })}
                        imagePlaceholder = {noMoviePosterIcon}
                        genres = {movie?.genre_ids.map((id) => genres[id])}

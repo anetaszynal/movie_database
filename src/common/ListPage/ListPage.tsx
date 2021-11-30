@@ -6,7 +6,7 @@ import { NoResults } from './NoResult'
 import { STATUS } from '../../lib/utils'
 
 interface Props {
-  title: string,
+  title: string | JSX.Element,
   status: STATUS,
   page: number,
   totalPages: number,

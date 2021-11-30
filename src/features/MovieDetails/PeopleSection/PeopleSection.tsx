@@ -1,13 +1,27 @@
-import React from "react";
+import React, { FC } from "react";
 import { GeneralTile } from "../../../common/Tiles/GeneralTile";
 import { DetailsSection } from "../../../common/DetailsSection";
 import { LOCAL_ROUTES } from "../../../lib/utils";
 import { getImage, IMAGE_SIZES } from "../../../common/Tiles/getImage";
 import noPersonPosterIcon from "../../images/noPersonPosterIcon.svg";
 import { StyledNavLink } from "../../../common/commonStyles";
-import { groupPersonRoles } from "../../../common/DetailsSection/groupPersonRoles";
+import { CrewPersonRoles, groupPersonRoles } from "../../../common/DetailsSection/groupPersonRoles";
+import { CommonDetailsSection } from "../../../common/types/tile";
+import {
+  MovieCreditsCast,
+  MovieCreditsCrew,
+} from "../../../models/credits.model";
 
-export const PeopleSection = ({ credits, title, role, tilesNumber }) => (
+interface PeopleSectionProps extends CommonDetailsSection {
+  role: 'character' | 'job',
+  credits: MovieCreditsCrew[] | MovieCreditsCast[]
+}
+
+const isCreditsCrewType = (credits: MovieCreditsCast | CrewPersonRoles): credits is CrewPersonRoles => {
+  return 'job' in credits
+}
+
+export const PeopleSection:FC<PeopleSectionProps> = ({ credits, title, role, tilesNumber }) => (
   <DetailsSection
     credits={credits}
     title={title}
@@ -16,8 +30,8 @@ export const PeopleSection = ({ credits, title, role, tilesNumber }) => (
   >
     {groupPersonRoles(credits, role).map((person) => (
       <StyledNavLink
-        key={`${person[role]}}-${person.credit_id}`}
-        to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(person.id)}`}
+        key={person.credit_id}
+        to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(person.id.toString())}`}
       >
         <GeneralTile
           image={getImage({
@@ -26,7 +40,7 @@ export const PeopleSection = ({ credits, title, role, tilesNumber }) => (
           })}
           imagePlaceholder={noPersonPosterIcon}
           title={person.name}
-          caption={person[role]}
+          caption={isCreditsCrewType(person) ? person.job : person.character}
           people
         />
       </StyledNavLink>

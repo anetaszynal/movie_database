@@ -3,7 +3,7 @@ import { buildQueryString } from '../common/buildQueryString'
 
 const API_KEY = 'fa9cbe4630e747b288e3a22b5a8069ea'
 
-type FetchApiType = <R>(prop:{path: string, parameters?: Record<string, string>}) => Promise<R>
+type FetchApiType = <R>(prop:{path: string, parameters?: Record<string, string | number>}) => Promise<R>
 
 export const fetchApi:FetchApiType = async ({ path, parameters }) => {
   const defaultParameters = {

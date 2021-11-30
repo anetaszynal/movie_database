@@ -23,7 +23,7 @@ export const APP_ROUTES = {
 export const LOCAL_ROUTES = {
   movies: '/movies',
   people: '/people',
-  details: (id:number) => `/details/${id}`,
+  details: (id:string) => `/details/${id}`,
 }
 
 export enum STATUS {
