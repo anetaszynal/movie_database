@@ -1,4 +1,4 @@
-import { createDetailsSlice } from '../../common/DetailsPage/detailsSlice'
+import { createDetailsSlice, DetailsSliceState } from '../../common/DetailsPage/detailsSlice'
 
 export const movieDetailsSlice = createDetailsSlice({
   name: 'movieDetails'

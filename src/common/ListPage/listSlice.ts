@@ -1,11 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { STATUS } from '../../lib/utils'
+import { StoreState } from '../../store'
 
-const initialState = {
+type ListStoreBranches = 'topRatedMovies' | 'people'
+
+export type ListSliceState = {
+  status: STATUS
+  results?: any
+  pagination?: any
+  query?: string
+}
+
+const initialState: ListSliceState = {
   status: STATUS.initial,
 }
 
-export const createListSlice = ({ name }) => {
+export const createListSlice = ({ name }: { name: ListStoreBranches }) => {
   const slice = createSlice({
     name,
     initialState,
@@ -29,17 +39,17 @@ export const createListSlice = ({ name }) => {
       clearAction: () => initialState,
     },
   })
-  const selectResults = (state) => state[name].results
+  const selectResults = (state: StoreState) => state[name].results
 
   return {
     reducer: slice.reducer,
     actions: slice.actions,
     selectors: {
       selectResults,
-      selectStatus: (state) => state[name].status,
-      selectQuery: (state) => state[name].query,
-      selectPagination: (state) => state[name].pagination,
-      selectResultsEmpty: (state) => selectResults(state)?.length === 0,
+      selectStatus: (state: StoreState) => state[name].status,
+      selectQuery: (state: StoreState) => state[name].query,
+      selectPagination: (state: StoreState) => state[name].pagination,
+      selectResultsEmpty: (state: StoreState) => selectResults(state)?.length === 0,
     },
   }
 }
