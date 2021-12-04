@@ -19,11 +19,11 @@ export const MoviesSection:FC<{credits: PersonCreditsCast[] | PersonCreditsCrew[
   return (
     <DetailsSection credits={credits} title={title} tilesNumber={tilesNumber}>
         {credits?.map((movie) => (
-          <StyledNavLink key = {movie.id}
+          <StyledNavLink key = {`${isCreditsCrewType(movie) ? `${movie.job}-${movie.id}` : `${movie.character}-${movie.id}`}`}
                          to = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id.toString())}`}>
             <GeneralTile image = {getImage({ path: movie.poster_path, size: IMAGE_SIZES.medium })}
                          imagePlaceholder = {noMoviePosterIcon}
-                         genres = {movie.genre_ids?.map((id) => genres[id])}
+                         genres = {genres ? movie.genre_ids?.map((id) => genres[id]) : undefined}
                          title = {movie.title}
                          caption = {`${isCreditsCrewType(movie) ? movie.job : movie.character} (${getYear(movie.release_date)})`}
                          averageVotes = {movie.vote_average}

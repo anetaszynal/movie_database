@@ -1,3 +1,5 @@
+import { Genre } from "../../models/genre.model";
+
 export interface VoteType {
   averageVotes?: number,
   votes?: number,
@@ -15,9 +17,9 @@ export interface Tile extends VoteType {
 export interface DetailedTile extends Tile {
   firstInfoName: string,
   secondInfoName: string,
-  firstInfo?: string,
-  secondInfo?: string,
-  description: string,
+  firstInfo?: string | string[],
+  secondInfo?: string | null,
+  description: string | null,
   detail?: boolean,
 }
 

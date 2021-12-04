@@ -8,8 +8,8 @@ import { STATUS } from '../../lib/utils'
 interface Props {
   title: string | JSX.Element,
   status: STATUS,
-  page: number,
-  totalPages: number,
+  page?: number,
+  totalPages?: number,
   people?: boolean,
   query: string | undefined,
   noResults: boolean

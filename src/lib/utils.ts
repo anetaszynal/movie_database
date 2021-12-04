@@ -2,7 +2,7 @@ export const getYear = (date:string) => {
   return date?.split('-')[0]
 }
 
-export const getFullDate = (date:string) => {
+export const getFullDate = (date:string | null) => {
   return date?.split('-').reverse().join('.').replace(/"-"/g, '.')
 }
 

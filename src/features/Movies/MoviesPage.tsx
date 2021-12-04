@@ -11,11 +11,12 @@ import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noMoviePosterIcon from '../images/noMoviePosterIcon.svg'
 import { StyledNavLink } from '../../common/commonStyles'
 import { MoviesBasicInformation } from '../../models/movie.model'
+import { Pagination } from '../../models/pagination.model'
 
 export const MoviesPage = () => {
   const movies = useSelector(selectors.selectResults) as MoviesBasicInformation[]
   const status = useSelector(selectors.selectStatus)
-  const pagination = useSelector(selectors.selectPagination)
+  const pagination = useSelector(selectors.selectPagination) as Pagination
   const genres = useSelector(selectGenres)
   const query = useSelector(selectors.selectQuery)
   const noResults = useSelector(selectors.selectResultsEmpty)
@@ -30,7 +31,7 @@ export const MoviesPage = () => {
         <>
           {noResults ? 'Sorry, there are no ' : 'Search '}
           results for <q>{query}</q>
-          {pagination?.totalResults > 0 && ` (${pagination.totalResults})`}
+          {pagination?.total_results > 0 && ` (${pagination.total_results})`}
         </>
       ) : (
         'Top rated Movies'
@@ -40,12 +41,12 @@ export const MoviesPage = () => {
               query = {query}
               noResults = {noResults}
               page = {pagination?.page}
-              totalPages = {pagination?.totalPages}>
+              totalPages = {pagination?.total_pages}>
       {movies?.map((movie) => (
         <StyledNavLink key = {movie.id} to = {`${LOCAL_ROUTES.movies}${LOCAL_ROUTES.details(movie.id.toString())}`}>
           <GeneralTile image = {getImage({ path: movie.poster_path, size: IMAGE_SIZES.medium })}
                        imagePlaceholder = {noMoviePosterIcon}
-                       genres = {movie?.genre_ids.map((id) => genres[id])}
+                       genres = {genres ? movie?.genre_ids.map((id) => genres[id]) : undefined}
                        title = {movie.title}
                        caption = {getYear(movie.release_date)}
                        averageVotes = {movie.vote_average}

@@ -30,7 +30,7 @@ export const PeopleSection:FC<PeopleSectionProps> = ({ credits, title, role, til
   >
     {groupPersonRoles(credits, role).map((person) => (
       <StyledNavLink
-        key={person.credit_id}
+        key={isCreditsCrewType(person) ? `${person.job}-${person.credit_id}` : `${person.character}-${person.credit_id}`}
         to={`${LOCAL_ROUTES.people}${LOCAL_ROUTES.details(person.id.toString())}`}
       >
         <GeneralTile

@@ -10,12 +10,14 @@ import { getFullDate } from '../../lib/utils'
 import { getImage, IMAGE_SIZES } from '../../common/Tiles/getImage'
 import noPersonPosterIcon from '../images/noPersonPosterIcon.svg'
 import { useHowMuchMovieTiles } from './useHowMuchMovieTiles'
+import { PersonDetails } from '../../models/person.model'
+import { PersonCreditsCast, PersonCreditsCrew } from '../../models/credits.model'
 
 export const PersonDetailsPage = () => {
   const dispatch = useDispatch()
-  const person = useSelector(selectors.selectDetails)
-  const cast = useSelector(selectors.selectCast)
-  const crew = useSelector(selectors.selectCrew)
+  const person = useSelector(selectors.selectDetails) as PersonDetails
+  const cast = useSelector(selectors.selectCast) as PersonCreditsCast[]
+  const crew = useSelector(selectors.selectCrew) as PersonCreditsCrew[]
   const status = useSelector(selectors.selectStatus)
   const tilesNumber = useHowMuchMovieTiles()
 

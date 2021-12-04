@@ -1,14 +1,26 @@
-import { all, call, delay, put, takeLatest } from 'redux-saga/effects'
+import { all, call, delay, put, SagaReturnType, takeLatest } from 'redux-saga/effects'
+import { getMovieCredits, getMovieDetails } from '../../features/MovieDetails/getMovieDetails'
+import { actions as MovieActions } from '../../features/MovieDetails/movieDetailsSlice'
+import { getPersonCredits, getPersonDetails } from '../../features/PersonDetails/getPersonDetails'
+import { actions as PersonActions } from '../../features/PersonDetails/personDetailsSlice'
 
-export function * detailsSaga ({ actions, getDetails, getCredits }: {actions: any, getDetails: any, getCredits:any}) {
-  function * fetchDetailsHandler ({ payload: id }: {payload: string}) {
+interface DetailsSaga {
+  actions: typeof PersonActions | typeof MovieActions,
+  getDetails: typeof getPersonDetails | typeof getMovieDetails,
+  getCredits: typeof getPersonCredits | typeof getMovieCredits
+}
+
+type DetailsSagaResponse = SagaReturnType<typeof getPersonDetails | typeof getMovieDetails>
+type CreditsSagaResponse =  SagaReturnType<typeof getPersonCredits | typeof getMovieCredits>
+
+export function * detailsSaga ({ actions, getDetails, getCredits }: DetailsSaga) {
+  function * fetchDetailsHandler ({ payload: id }: ReturnType<typeof actions.fetch>) {
     yield delay(200)
 
     try {
-      console.log('saga', id, typeof id)
-      const [detailsResponse, creditsResponse] = yield all([
-        call(getDetails, { id }),
-        call(getCredits, { id }),
+      const [detailsResponse, creditsResponse]: [DetailsSagaResponse, CreditsSagaResponse] = yield all([
+        call(getDetails, { id: +id }),
+        call(getCredits, { id: +id }),
       ])
 
       yield put(actions.fetchSuccess({

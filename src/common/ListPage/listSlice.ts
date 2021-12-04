@@ -1,13 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { STATUS } from '../../lib/utils'
+import { MoviesBasicInformation } from '../../models/movie.model'
+import { Pagination } from '../../models/pagination.model'
+import { PeopleBasicInformation } from '../../models/person.model'
 import { StoreState } from '../../store'
 
 type ListStoreBranches = 'topRatedMovies' | 'people'
 
 export type ListSliceState = {
   status: STATUS
-  results?: any
-  pagination?: any
+  results?: MoviesBasicInformation[] | PeopleBasicInformation[],
+  pagination?: Pagination
   query?: string
 }
 

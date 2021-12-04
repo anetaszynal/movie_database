@@ -1,4 +1,5 @@
 import { PersonCreditsCast, PersonCreditsCrew } from "./credits.model";
+import { Pagination } from "./pagination.model";
 
 export interface PersonDetails {
   adult: boolean,
@@ -49,9 +50,6 @@ export interface PeopleBasicInformation {
   profile_path: string,
 }
 
-export interface People {
-  page: number,
+export interface People extends Pagination{
   results: PeopleBasicInformation[],
-  total_results: number,
-  total_pages: number
 }

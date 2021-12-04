@@ -3,15 +3,15 @@ import { STATUS } from '../../lib/utils'
 import { MovieCreditsCast, MovieCreditsCrew, PersonCreditsCast, PersonCreditsCrew } from '../../models/credits.model'
 import { MovieDetails } from '../../models/movie.model'
 import { PersonDetails } from '../../models/person.model'
-import { StoreState, StoreBranches } from '../../store'
+import { StoreState } from '../../store'
 
 type DetailsSliceBranches = 'personDetails' | 'movieDetails'
 
 export type DetailsSliceState = {
   status: STATUS,
   details?: MovieDetails | PersonDetails,
-  crew?: MovieCreditsCrew | PersonCreditsCrew,
-  cast?: MovieCreditsCast | PersonCreditsCast
+  crew?: MovieCreditsCrew[] | PersonCreditsCrew[],
+  cast?: MovieCreditsCast[] | PersonCreditsCast[]
 }
 
 const initialState: DetailsSliceState = {

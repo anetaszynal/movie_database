@@ -11,11 +11,13 @@ import { getFullDate, getYear } from "../../lib/utils";
 import { getImage, IMAGE_SIZES } from "../../common/Tiles/getImage";
 import noMoviePosterIcon from "../images/noMoviePosterIcon.svg";
 import { useHowMuchPersonTiles } from "./useHowMuchPersonTiles";
+import { MovieDetails as MovieDetailsType } from "../../models/movie.model";
+import { MovieCreditsCast, MovieCreditsCrew } from "../../models/credits.model";
 
 export const MovieDetails = () => {
-  const details = useSelector(selectors.selectDetails);
-  const cast = useSelector(selectors.selectCast);
-  const crew = useSelector(selectors.selectCrew);
+  const details = useSelector(selectors.selectDetails) as MovieDetailsType;
+  const cast = useSelector(selectors.selectCast) as MovieCreditsCast[];
+  const crew = useSelector(selectors.selectCrew) as MovieCreditsCrew[];
   const status = useSelector(selectors.selectStatus);
   const dispatch = useDispatch();
   const { id } = useParams<{id: string}>();

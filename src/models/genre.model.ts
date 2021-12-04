@@ -3,6 +3,9 @@ export interface Genre {
   name: string
 }
 
+export interface GenreAfterConvertingIntoObject {
+  [id: number] : string
+}
 export interface GenresResponse {
   genres: Genre[]
 }

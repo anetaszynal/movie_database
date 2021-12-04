@@ -1,16 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { STATUS } from '../../lib/utils'
-import { Genre } from '../../models/genre.model'
+import { GenreAfterConvertingIntoObject } from '../../models/genre.model'
 import { StoreState } from '../../store'
 
 export type GenreState = {
   status: STATUS
-  genres: Genre[]
+  genres?: GenreAfterConvertingIntoObject
 }
 
 const initialState: GenreState = {
   status: STATUS.initial,
-  genres: []
 }
 
 export const genresSlice = createSlice({
@@ -20,12 +19,12 @@ export const genresSlice = createSlice({
       fetchGenres: (state) => {
           state.status =STATUS.loading
         },
-      fetchGenresSuccess: (state, { payload: genres }: any) => {
+      fetchGenresSuccess: (state, { payload: genres }) => {
         state.status = STATUS.success
         state.genres = genres
       },
       fetchGenresError: (state) => {
-        state.status =STATUS.error
+        state.status = STATUS.error
       }
     },
   }

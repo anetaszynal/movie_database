@@ -1,5 +1,6 @@
 import { MovieCreditsCast, MovieCreditsCrew } from "./credits.model";
 import { Genre } from "./genre.model";
+import { Pagination } from "./pagination.model";
 
 export interface MovieDetails {
   adult: boolean,
@@ -51,10 +52,6 @@ export interface MoviesBasicInformation {
   video: boolean,
   vote_average: number
 }
-
-export interface Movies {
-  page: number,
+export interface Movies extends Pagination{
   results: MoviesBasicInformation[],
-  total_results: number,
-  total_pages: number
 }

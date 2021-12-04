@@ -30,7 +30,7 @@ export const PeoplePage = () => {
           <>
             {noResults ? "Sorry, there are no " : "Search "} results for{" "}
             <q>{query}</q>
-            {pagination?.totalResults > 0 && ` (${pagination.totalResults})`}
+            {pagination && pagination?.total_results > 0 && ` (${pagination?.total_results})`}
           </>
         ) : (
           "Popular People"
@@ -40,7 +40,7 @@ export const PeoplePage = () => {
       noResults={noResults}
       status={status}
       page={pagination?.page}
-      totalPages={pagination?.totalPages}
+      totalPages={pagination?.total_pages}
     >
       {people?.map((person) => (
         <StyledNavLink
