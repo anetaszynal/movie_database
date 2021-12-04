@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Movie DataBase
 
-## Available Scripts
+My movie database lets you see the top popular movies and people. You can also search for people and movies that interest you.
+After clicking on the tile, you will see even more information about the selected movie or person. I created this webside during the course by YOUCODE. Currently, I am still expanding it with additional functionalities
 
-In the project directory, you can run:
+## Where can I find this movie database?
 
-### `npm start`
+Below I attached link to this website:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[movie database](https://anetaszynal.github.io/movie_database/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Description
 
-### `npm test`
+You will find there:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- list with top popular people
+- list with top popular movies
+- navigation and pagination
+- place to search people or movies
+- link with movie or person details
+- page with person details (e.g movies cast, movies crew, description)
+- page with movie details (e.g cast, crew, description)
 
-### `npm run build`
+**Technologies, libraries and methodologies used:**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTML
+- CSS
+- Styled components
+- JavaScript
+- TypeScript
+- React.js
+- React Router
+- Hooks (also custom hooks)
+- JSX
+- Redux
+- Redux Saga
+- Redux Toolkit
+- API
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## How to use?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Browse the top rated movies and choose the one that interests you
+2. You can change page using pagination at the bottom of the page
+3. If you cannot find the video you are interested in, use the search engine
+4. When you find a movie you want to know details about, click on it
+5. After clicking, you will see the movie details page, scroll and read about the most interesting details
+6. Use the navigation to go to a page with famous people in the movie industry
+7. Now you can browse and learn details about celebrities.
+8. Have fun! 😉
