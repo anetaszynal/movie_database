@@ -1,7 +1,16 @@
 import React, { FC } from 'react'
 import { Arrow, PageWrapper, Slider, Wrapper } from './styled'
 
-export const GallerySlider:FC<{photos: number, creditsPage: JSX.Element[], slideStart: number, tilesNumber: number, showNext:() => void, showPrevious:() => void}> = ({ photos, creditsPage, slideStart, tilesNumber, showNext, showPrevious, children }) => {
+interface Props {
+  photos: number, 
+  creditsPage: JSX.Element[], 
+  slideStart: number, 
+  tilesNumber: number, 
+  showNext:() => void, 
+  showPrevious:() => void
+}
+
+export const GallerySlider:FC<Props> = ({ photos, creditsPage, slideStart, tilesNumber, showNext, showPrevious, children }) => {
 
   return (
     <>

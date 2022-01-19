@@ -1,5 +1,3 @@
-import { Genre } from "../../models/genre.model";
-
 export interface VoteType {
   averageVotes?: number,
   votes?: number,

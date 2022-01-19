@@ -11,7 +11,7 @@ interface Props {
   page?: number,
   totalPages?: number,
   people?: boolean,
-  query: string | undefined,
+  query?: string,
   noResults: boolean
 }
 

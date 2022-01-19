@@ -1,9 +1,9 @@
-import React, { SetStateAction, useRef } from "react";
+import React, { SetStateAction, useRef, Dispatch } from "react";
 import { useHistory } from "react-router-dom";
 import { buildQueryString } from "../../buildQueryString";
 import { LOCAL_ROUTES } from "../../../lib/utils";
 
-export const useOnSearchInputChange = (setInputValue:React.Dispatch<SetStateAction<string>>) => {
+export const useOnSearchInputChange = (setInputValue:Dispatch<SetStateAction<string>>) => {
   const timeoutRef = useRef<NodeJS.Timeout|null>();
   const history = useHistory();
 

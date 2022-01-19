@@ -1,11 +1,11 @@
 import { call, delay, put, SagaReturnType, takeLatest } from 'redux-saga/effects'
 import { getSearchedMovies, getTopRatedMovies } from '../../features/Movies/getTopRatedMovies'
-import { actions as MoviesActions } from '../../features/Movies/topRatedMoviesSlice'
+import { actions as moviesActions } from '../../features/Movies/topRatedMoviesSlice'
 import { getPeople, getSearchedPeople } from '../../features/People/getPeople'
-import { actions as PeopleActions } from '../../features/People/peopleSlice'
+import { actions as peopleActions } from '../../features/People/peopleSlice'
 
 interface ListSaga {
-  actions: typeof MoviesActions | typeof PeopleActions,
+  actions: typeof moviesActions | typeof peopleActions,
   getPopular: typeof getTopRatedMovies | typeof getPeople,
   getSearched: typeof getSearchedMovies | typeof getSearchedPeople
 }
