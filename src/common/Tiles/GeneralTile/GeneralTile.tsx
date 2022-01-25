@@ -22,7 +22,7 @@ export const GeneralTile:FC<Tile> = ({
         <Title people = {people}>{title}</Title>
         {!caption
         ? null
-        : typeof caption === 'string' ? <Caption people = {people}>{caption}</Caption> : caption?.map((role, index) => <Caption key={index} people = {people}>{role}</Caption>)
+        : typeof caption === 'string' ? <Caption people = {people}>{caption}</Caption> : caption.map((role, index) => <Caption key={index} people = {people}>{role}</Caption>)
         }
         {genres && genres?.length > 0 && <GenresList genres = {genres}/>}
       </InsideMeta>
