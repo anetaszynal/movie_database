@@ -1,4 +1,4 @@
-export const buildQueryString = (parameters: Record<string|number, string|number|undefined>, initialQueryString?: string) => {
+export const buildQueryString = (parameters: Record<string, string|number|undefined>, initialQueryString?: string) => {
   const urlSearchParams = new URLSearchParams(initialQueryString)
 
   for (const name in parameters) {
