@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`groupPersonRoles should group person roles together 1`] = `
+Array [
+  Object {
+    "adult": false,
+    "cast_id": 22,
+    "character": "Harry Potter",
+    "credit_id": "52fe4268c3a36847f801c4db",
+    "gender": 2,
+    "id": 10980,
+    "known_for_department": "Acting",
+    "name": "Daniel Radcliffe",
+    "order": 0,
+    "original_name": "Daniel Radcliffe",
+    "popularity": 29.485,
+    "profile_path": "/f9WKorjfanW4PxTxhjRvHtCmfKf.jpg",
+  },
+  Object {
+    "adult": false,
+    "cast_id": 23,
+    "character": "Ron Weasley",
+    "credit_id": "52fe4268c3a36847f801c4df",
+    "gender": 2,
+    "id": 10989,
+    "known_for_department": "Acting",
+    "name": "Rupert Grint",
+    "order": 1,
+    "original_name": "Rupert Grint",
+    "popularity": 12.605,
+    "profile_path": "/iFlkpTaOF6fGLqxz8b0PhI0i0zN.jpg",
+  },
+]
+`;
+
+exports[`groupPersonRoles should group person roles together 2`] = `
+Array [
+  Object {
+    "credit_id": "52fe4268c3a36847f801c49b",
+    "id": 1129,
+    "job": Array [
+      "Director of Photography",
+      "Production Design",
+    ],
+    "name": "Slawomir Idziak",
+    "profile_path": null,
+  },
+]
+`;
